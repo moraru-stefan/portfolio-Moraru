@@ -21,5 +21,15 @@ const projectsData = [
     codeUrl:
       "https://github.com/Steopa2001/progetto-finale-spec-frontend-front",
   },
+  {
+  title: "To-Do List – Task Manager",
+  description:
+    "Applicazione SPA sviluppata con React e Vite che consente di creare, completare e rimuovere task in modo intuitivo. Interfaccia responsive realizzata con Tailwind CSS e deploy tramite GitHub Pages.",
+  tech: ["React", "Vite", "JavaScript", "Tailwind CSS"],
+  image: `${BASE}to-do-list.png`,
+  demoUrl: "https://steopa2001.github.io/to-do-list/",
+  codeUrl: "https://github.com/Steopa2001/to-do-list",
+},
+
 ];
 export default projectsData;
