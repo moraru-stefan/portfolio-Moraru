@@ -327,15 +327,43 @@ footer a:hover {
 }
 
 @media (max-width: 500px) {
+  /* non nascondere l'immagine */
   .img-col .stefan-img {
-    display: none;
+    display: block;
+    max-width: 140px;          /* avatar size */
+    margin: 0 auto 14px;
+    border-radius: 999px;      /* cerchio */
+    box-shadow: var(--shadow-md);
+
+    /* niente maschera su mobile (a volte taglia male in cerchio) */
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  /* la colonna immagine va sopra e centrata */
+  .img-col {
+    order: -1;
+    text-align: center;
   }
 
   #home h1.display-5 {
-    font-size: 1.8rem;
-    line-height: 1.3;
+    font-size: 1.85rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  #home p,
+  #home .lead,
+  #home .text-uppercase {
+    text-align: center;
+  }
+
+  #home .d-flex.gap-3.mt-4 {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
+
 
 /* ===== Showcase tabs ===== */
 .showcase-tabs .btn {
