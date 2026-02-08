@@ -11,6 +11,8 @@ export default function Homepage() {
   const [contactRef, contactVisible] = useReveal();
   const [showcaseTab, setShowcaseTab] = useState("projects");
   const [tabAnim, setTabAnim] = useState(true);
+  const [pathRef, pathVisible] = useReveal();
+
 
   const changeTab = (next) => {
     if (next === showcaseTab) return;
@@ -81,32 +83,105 @@ export default function Homepage() {
             HTML, CSS e JavaScript per il front-end, e Node.js, Express e MySQL
             per il back-end.
           </p>
-          <div className="mt-4">
-            <h3 className="h6 text-uppercase text-muted mb-3">Competenze</h3>
-            <div className="d-flex flex-wrap gap-2">
-              {[
-                "HTML5",
-                "CSS3",
-                "JavaScript",
-                "Bootstrap",
-                "Tailwind",
-                "Node.js",
-                "Express",
-                "React",
-                "MySQL",
-                "Git/GitHub",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="badge rounded-pill text-bg-light border"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* MY PATH */}
+<section id="path" className="py-5">
+  <div
+    ref={pathRef}
+    className={`container reveal ${pathVisible ? "is-visible" : ""}`}
+  >
+    <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+      <div>
+        <h2 className="h3 fw-bold mb-1">Il mio percorso</h2>
+        <p className="text-muted mb-0">
+          Formazione ed esperienza: il mio percorso fino allo sviluppo web.
+        </p>
+      </div>
+    </div>
+
+    <div className="path-timeline">
+      {/* 2015 - 2020 */}
+      <article className="path-item">
+        <div className="path-dot" aria-hidden="true"></div>
+        <div className="path-card">
+          <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
+            <span className="badge text-bg-light border">2015 • 2020</span>
+            <span className="text-muted small">Lecco, Lombardia</span>
+          </div>
+
+          <h3 className="h5 mb-1">Istituto Superiore Statale “P.A. Fiocchi”</h3>
+          <p className="text-muted mb-2">
+            Diploma Istituto Tecnico e Professionale
+          </p>
+
+          <ul className="path-list">
+            <li>Diploma conseguito</li>
+            <li>Base tecnica e metodo di studio</li>
+          </ul>
+        </div>
+      </article>
+
+      {/* 2021 - 2025 */}
+      <article className="path-item">
+        <div className="path-dot" aria-hidden="true"></div>
+        <div className="path-card">
+          <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
+            <span className="badge text-bg-light border">Ott 2021 • Apr 2025</span>
+            <span className="text-muted small">Minuterie3M • Full-time • In sede</span>
+          </div>
+
+          <h3 className="h5 mb-1">Tecnico di Produzione / Tecnico Operativo</h3>
+          <p className="text-muted mb-3">
+            Durante tre anni e mezzo nel settore metalmeccanico ho gestito attività
+            operative e di manutenzione, usando terminali e software gestionali di reparto,
+            lavorando in team e contribuendo agli obiettivi produttivi.
+          </p>
+
+          <h4 className="h6 text-uppercase text-muted mb-2">Competenze sviluppate</h4>
+          <ul className="path-list">
+            <li>Lavoro in team e collaborazione</li>
+            <li>Gestione scadenze e rispetto tempi di consegna</li>
+            <li>Problem solving operativo e attenzione alla qualità</li>
+            <li>Adattabilità e lavoro sotto pressione</li>
+          </ul>
+
+          <div className="d-flex flex-wrap gap-2 mt-3">
+            {["Teamwork", "Gestione del tempo", "Problem solving", "Attenzione ai dettagli", "Adattabilità"].map((s) => (
+              <span key={s} className="badge rounded-pill text-bg-light border">
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </article>
+
+      {/* 2025 - 2026 */}
+      <article className="path-item">
+        <div className="path-dot" aria-hidden="true"></div>
+        <div className="path-card">
+          <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
+            <span className="badge text-bg-light border">2025 • 2026</span>
+            <span className="text-muted small">Boolean</span>
+          </div>
+
+          <h3 className="h5 mb-1">Corso Full-Stack Web Developer</h3>
+          <p className="text-muted mb-2">
+            Percorso intensivo completato nel 2026, orientato a progetti pratici.
+          </p>
+
+          <ul className="path-list">
+            <li>Front-end: HTML, CSS, JavaScript, React</li>
+            <li>Back-end: Node.js, Express, MySQL</li>
+            <li>Progetti reali + lavoro in team</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
       {/* PORTFOLIO SHOWCASE */}
       <section id="projects" className="py-5 bg-light border-top border-bottom">
         <div
@@ -115,7 +190,7 @@ export default function Homepage() {
         >
           <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
             <div>
-              <h2 className="h3 fw-bold mb-1">Portfolio Showcase</h2>
+              <h2 className="h3 fw-bold mb-1">I miei lavori</h2>
               <p className="text-muted mb-0">
                 Progetti, certificati e tech stack.
               </p>
@@ -132,7 +207,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("projects")}
               >
-                Projects
+                Progetti
               </button>
 
               <button
@@ -144,7 +219,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("certificates")}
               >
-                Certificates
+                Certificati
               </button>
 
               <button
@@ -156,7 +231,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("stack")}
               >
-                Tech Stack
+                Tecnologie
               </button>
             </div>
           </div>
