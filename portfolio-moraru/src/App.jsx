@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Homepage from "./pages/Homepage.jsx";
+import BackToTop from "./components/BackToTop.jsx";
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <main>
       <Homepage/>
       </main>
+      <BackToTop />
       <Footer year={year} />
     </>
   );

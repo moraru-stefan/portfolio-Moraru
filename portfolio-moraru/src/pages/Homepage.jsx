@@ -1,22 +1,21 @@
 import projectsData from "../data/projects";
-import { useEffect, useState } from "react";
+import useReveal from "../hooks/useReveal";
 
 const BASE = import.meta.env.BASE_URL;
 
 export default function Homepage() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 200);
-    return () => clearTimeout(timer);
-  }, []);
+  const [heroRef, heroVisible] = useReveal();
+  const [aboutRef, aboutVisible] = useReveal();
+  const [projectsRef, projectsVisible] = useReveal();
+  const [contactRef, contactVisible] = useReveal();
 
   return (
     <>
       {/* HERO */}
       <header id="home" className="py-5 bg-light">
         <div
-          className={`container py-4 fade-section ${visible ? "visible" : ""}`}
+          ref={heroRef}
+          className={`container py-4 reveal ${heroVisible ? "is-visible" : ""}`}
         >
           <div className="row align-items-center g-4">
             <div className="col-12 col-lg-7">
@@ -60,7 +59,10 @@ export default function Homepage() {
 
       {/* ABOUT */}
       <section id="about" className="py-5">
-        <div className="container">
+        <div
+          ref={aboutRef}
+          className={`container reveal ${aboutVisible ? "is-visible" : ""}`}
+        >
           <h2 className="h3 fw-bold mb-3">Chi sono</h2>
           <p className="text-muted">
             Sono uno sviluppatore web junior con competenze full‑stack e un
@@ -99,15 +101,31 @@ export default function Homepage() {
 
       {/* PROJECTS */}
       <section id="projects" className="py-5 bg-light border-top border-bottom">
-        <div className="container">
+        <div
+          ref={projectsRef}
+          className={`container reveal ${projectsVisible ? "is-visible" : ""}`}
+        >
           <h2 className="h3 fw-bold mb-4">Progetti</h2>
           <div className="row g-4">
             {projectsData.map((p, idx) => (
               <div key={idx} className="col-12 col-md-6 col-lg-4">
-                <div className="card h-100 shadow-sm border-0">
+                <div
+                  className="card h-100 border-0 project-card"
+                  onMouseMove={(e) => {
+                    const r = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty(
+                      "--mx",
+                      `${e.clientX - r.left}px`,
+                    );
+                    e.currentTarget.style.setProperty(
+                      "--my",
+                      `${e.clientY - r.top}px`,
+                    );
+                  }}
+                >
                   <img
                     src={p.image}
-                    className="card-img-top"
+                   className="card-img-top project-thumb"
                     alt={`Screenshot ${p.title}`}
                   />
                   <div className="card-body d-flex flex-column">
@@ -152,7 +170,10 @@ export default function Homepage() {
 
       {/* CONTACTS */}
       <section id="contact" className="py-5">
-        <div className="container">
+        <div
+          ref={contactRef}
+          className={`container reveal ${contactVisible ? "is-visible" : ""}`}
+        >
           <h2 className="h3 fw-bold mb-3">Contatti</h2>
           <p className="mb-4">Vuoi collaborare o hai domande? Scrivimi pure.</p>
           <div className="d-flex flex-wrap gap-3">
