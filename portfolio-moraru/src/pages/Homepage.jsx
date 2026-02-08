@@ -323,7 +323,6 @@ export default function Homepage() {
         </div>
       </section>
       {/* CONTACTS */}
-      // CONTACTS
       <section id="contact" className="py-5">
         <div
           ref={contactRef}
