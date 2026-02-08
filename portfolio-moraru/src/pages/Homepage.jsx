@@ -1,5 +1,6 @@
 import projectsData from "../data/projects";
 import useReveal from "../hooks/useReveal";
+import { useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -8,6 +9,15 @@ export default function Homepage() {
   const [aboutRef, aboutVisible] = useReveal();
   const [projectsRef, projectsVisible] = useReveal();
   const [contactRef, contactVisible] = useReveal();
+  const [showcaseTab, setShowcaseTab] = useState("projects"); 
+  const [tabAnim, setTabAnim] = useState(true);
+
+  const changeTab = (next) => {
+    if (next === showcaseTab) return;
+    setTabAnim(false);
+    setShowcaseTab(next);
+    requestAnimationFrame(() => setTabAnim(true));
+  };
 
   return (
     <>
@@ -99,13 +109,59 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="py-5 bg-light border-top border-bottom">
-        <div
-          ref={projectsRef}
-          className={`container reveal ${projectsVisible ? "is-visible" : ""}`}
+      {/* PORTFOLIO SHOWCASE */}
+<section id="projects" className="py-5 bg-light border-top border-bottom">
+  <div
+    ref={projectsRef}
+    className={`container reveal ${projectsVisible ? "is-visible" : ""}`}
+  >
+    <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+      <div>
+        <h2 className="h3 fw-bold mb-1">Portfolio Showcase</h2>
+        <p className="text-muted mb-0">
+          Progetti, certificati e tech stack.
+        </p>
+      </div>
+
+      {/* Tabs */}
+      <div className="showcase-tabs d-flex flex-wrap gap-2">
+        <button
+          type="button"
+          className={`btn btn-sm ${
+            showcaseTab === "projects" ? "btn-primary" : "btn-outline-primary"
+          }`}
+          onClick={() => changeTab("projects")}
         >
-          <h2 className="h3 fw-bold mb-4">Progetti</h2>
+          Projects
+        </button>
+
+        <button
+          type="button"
+          className={`btn btn-sm ${
+            showcaseTab === "certificates" ? "btn-primary" : "btn-outline-primary"
+          }`}
+          onClick={() => changeTab("certificates")}
+        >
+          Certificates
+        </button>
+
+        <button
+          type="button"
+          className={`btn btn-sm ${
+            showcaseTab === "stack" ? "btn-primary" : "btn-outline-primary"
+          }`}
+          onClick={() => changeTab("stack")}
+        >
+          Tech Stack
+        </button>
+      </div>
+    </div>
+
+    {/* CONTENUTO TAB */}
+    <div className="showcase-panel">
+      {/* TAB: PROJECTS */}
+      {showcaseTab === "projects" && (
+        <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
           <div className="row g-4">
             {projectsData.map((p, idx) => (
               <div key={idx} className="col-12 col-md-6 col-lg-4">
@@ -113,19 +169,13 @@ export default function Homepage() {
                   className="card h-100 border-0 project-card"
                   onMouseMove={(e) => {
                     const r = e.currentTarget.getBoundingClientRect();
-                    e.currentTarget.style.setProperty(
-                      "--mx",
-                      `${e.clientX - r.left}px`,
-                    );
-                    e.currentTarget.style.setProperty(
-                      "--my",
-                      `${e.clientY - r.top}px`,
-                    );
+                    e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+                    e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
                   }}
                 >
                   <img
                     src={p.image}
-                   className="card-img-top project-thumb"
+                    className="card-img-top project-thumb"
                     alt={`Screenshot ${p.title}`}
                   />
                   <div className="card-body d-flex flex-column">
@@ -133,6 +183,7 @@ export default function Homepage() {
                     <p className="card-text text-muted small flex-grow-1">
                       {p.description}
                     </p>
+
                     <div className="mb-3 d-flex flex-wrap gap-1">
                       {p.tech.map((t) => (
                         <span key={t} className="badge text-bg-light border">
@@ -140,6 +191,7 @@ export default function Homepage() {
                         </span>
                       ))}
                     </div>
+
                     <div className="d-flex gap-2">
                       <a
                         href={p.demoUrl}
@@ -166,7 +218,96 @@ export default function Homepage() {
             ))}
           </div>
         </div>
-      </section>
+      )}
+
+      {/* TAB: CERTIFICATES */}
+{showcaseTab === "certificates" && (
+  <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
+    <div className="row g-4">
+      {[
+        {
+          title: "Boolean • Full-Stack Web Developer",
+          year: "2026",
+          img: `${BASE}Boolean-img.png`,
+          file: `${BASE}Certificato-Boolean.pdf`, 
+        },
+        // {
+        //   title: "Udemy • HTML e CSS",
+        //   year: "2024",
+        //   img: `${BASE}certificates/js-cert.jpg`,
+        //   file: `${BASE}certificates/js-cert.pdf`,
+        // },
+      ].map((c) => (
+        <div className="col-12 col-md-6 col-lg-4" key={c.title}>
+          <div className="cert-card2 rounded-4 border bg-white shadow-sm h-100 overflow-hidden">
+            {/* immagine certificato */}
+            <a
+              href={c.file}
+              target={c.file !== "#" ? "_blank" : undefined}
+              rel={c.file !== "#" ? "noreferrer" : undefined}
+              onClick={(e) => c.file === "#" && e.preventDefault()}
+              className="cert-media"
+              aria-label={`Apri ${c.title}`}
+              title={`Apri ${c.title}`}
+            >
+              <img src={c.img} alt={`Certificato: ${c.title}`} />
+            </a>
+
+            {/* testo */}
+            <div className="p-4">
+              <div className="d-flex justify-content-between align-items-start gap-2">
+                <h3 className="h6 fw-bold mb-1">{c.title}</h3>
+                <span className="badge text-bg-light border">{c.year}</span>
+              </div>
+
+              <div className="d-flex gap-2 mt-3">
+                <a
+                  className="btn btn-primary btn-sm"
+                  href={c.file}
+                  target={c.file !== "#" ? "_blank" : undefined}
+                  rel={c.file !== "#" ? "noreferrer" : undefined}
+                  onClick={(e) => c.file === "#" && e.preventDefault()}
+                >
+                  Apri PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+
+      {/* TAB: TECH STACK  */}
+      {showcaseTab === "stack" && (
+        <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
+
+          <div className="stack-grid">
+            {[
+              { alt: "HTML5", src: `${BASE}HTML5.png` },
+              { alt: "CSS3", src: `${BASE}CSS3.png` },
+              { alt: "JavaScript", src: `${BASE}Javascript.webp` },
+              { alt: "React", src: `${BASE}react.png` },
+              { alt: "Bootstrap", src: `${BASE}Bootstrap.png` },
+              { alt: "Tailwind", src: `${BASE}tailwindcss.png` },
+              { alt: "Node.js", src: `${BASE}Node-js.png` },
+              { alt: "Express", src: `${BASE}Express.png` },
+              { alt: "MySQL", src: `${BASE}mySQL.png` },
+              { alt: "Git", src: `${BASE}git.png` },
+            ].map((t) => (
+              <div className="stack-item" key={t.alt} title={t.alt}>
+                <img src={t.src} alt={t.alt} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
 
       {/* CONTACTS */}
       <section id="contact" className="py-5">
