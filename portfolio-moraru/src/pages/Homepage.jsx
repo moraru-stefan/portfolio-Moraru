@@ -128,7 +128,7 @@ export default function Homepage() {
         <div className="path-dot" aria-hidden="true"></div>
         <div className="path-card">
           <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
-            <span className="badge text-bg-light border">Ott 2021 • Apr 2025</span>
+            <span className="badge text-bg-light border">2021 • 2025</span>
             <span className="text-muted small">Minuterie3M • Full-time • In sede</span>
           </div>
 
