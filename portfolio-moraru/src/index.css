@@ -327,18 +327,30 @@ footer a:hover {
 }
 
 @media (max-width: 500px) {
-  /* non nascondere l'immagine */
-  .img-col .stefan-img {
-    display: block;
-    max-width: 140px;          /* avatar size */
-    margin: 0 auto 14px;
-    border-radius: 999px;      /* cerchio */
-    box-shadow: var(--shadow-md);
+.img-col .stefan-img {
+  display: block;
+  max-width: 140px;          
+  margin: 0 auto 14px;
+  border-radius: 999px;     
+  box-shadow: var(--shadow-md);
 
-    /* niente maschera su mobile (a volte taglia male in cerchio) */
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 68%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 68%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
 
   /* la colonna immagine va sopra e centrata */
   .img-col {
