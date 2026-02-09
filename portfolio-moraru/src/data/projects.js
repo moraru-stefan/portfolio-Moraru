@@ -8,8 +8,8 @@ const projectsData = [
       "Replica minimale dell’interfaccia di Spotify con responsive layout e player fittizio.",
     tech: ["HTML", "CSS"],
     image: `${BASE}spotify-clone.png`,
-    demoUrl: "https://steopa2001.github.io/html-css-spotifyweb/",
-    codeUrl: "https://github.com/Steopa2001/html-css-spotifyweb",
+    demoUrl: "https://moraru-stefan.github.io/html-css-spotifyweb/",
+    codeUrl: "https://github.com/moraru-stefan/html-css-spotifyweb",
   },
   {
     title: "SmartphoneHub – Comparatore",
@@ -27,8 +27,8 @@ const projectsData = [
     "Applicazione SPA sviluppata con React e Vite che consente di creare, completare e rimuovere task in modo intuitivo. Interfaccia responsive realizzata con Tailwind CSS e deploy tramite GitHub Pages.",
   tech: ["React", "Vite", "JavaScript", "Tailwind CSS"],
   image: `${BASE}to-do-list.png`,
-  demoUrl: "https://steopa2001.github.io/to-do-list/",
-  codeUrl: "https://github.com/Steopa2001/to-do-list",
+  demoUrl: "https://moraru-stefan.github.io/to-do-list/",
+  codeUrl: "https://github.com/moraru-stefan/to-do-list",
 },
 
 ];
