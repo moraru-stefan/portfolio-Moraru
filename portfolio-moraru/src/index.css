@@ -637,3 +637,43 @@ h1,h2,h3,h4,h5,h6{
 .badge *{
   color: inherit !important;
 }
+
+/* hamburger button */
+.navbar-toggler{
+  color: #fff !important;
+}
+
+/* icona hamburger */
+.navbar-toggler i{
+  color: #fff !important;
+}
+
+/* ===== Mobile hamburger animation ===== */
+.nav-toggle{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  transition: all .25s ease;
+}
+
+/* hover glow */
+.nav-toggle:hover{
+  background: rgba(124,58,237,.15);
+}
+
+/* icona */
+.nav-toggle i{
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* quando menu aperto */
+.nav-toggle.open{
+  background: rgba(124,58,237,.25);
+  box-shadow: 0 0 20px rgba(124,58,237,.35);
+}
+
+.nav-toggle.open i{
+  transform: rotate(90deg);
+}

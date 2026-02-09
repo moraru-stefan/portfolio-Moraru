@@ -55,7 +55,7 @@ export default function Header() {
 
         {/* Bottone hamburger */}
         <button
-          className="navbar-toggler border-0"
+          className={`navbar-toggler border-0 nav-toggle ${isOpen ? "open" : ""}`}
           type="button"
           onClick={toggleNavbar}
           aria-expanded={isOpen}
