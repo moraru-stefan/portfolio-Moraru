@@ -454,7 +454,7 @@ export default function Homepage() {
                 </a>
                 <a
                   className="btn btn-outline-light"
-                  href="https://github.com/Steopa2001"
+                 href="https://github.com/moraru-stefan"
                   target="_blank"
                   rel="noreferrer"
                 >
