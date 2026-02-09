@@ -1,6 +1,6 @@
 export default function Footer({ year }) {
   return (
-    <footer className="py-4 bg-white border-top">
+    <footer className="py-4 border-top section-surface">
       <div className="container small text-muted d-flex flex-wrap gap-2 justify-content-between align-items-center">
         <span>© {year} Moraru Stefan • Portfolio</span>
         <a href="#home" className="link-secondary text-decoration-none">

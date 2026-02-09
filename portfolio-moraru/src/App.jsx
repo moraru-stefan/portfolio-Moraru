@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <>
+     <div className="bg-orbs" aria-hidden="true"></div>
       <Header />
       <main>
       <Homepage/>

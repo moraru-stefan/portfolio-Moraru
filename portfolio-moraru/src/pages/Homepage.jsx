@@ -23,7 +23,7 @@ export default function Homepage() {
   return (
     <>
       {/* HERO */}
-      <header id="home" className="py-5 bg-light">
+      <header id="home" className="py-5 section-surface">
         <div
           ref={heroRef}
           className={`container py-4 reveal ${heroVisible ? "is-visible" : ""}`}
@@ -208,7 +208,7 @@ export default function Homepage() {
       </section>
 
       {/* PORTFOLIO SHOWCASE */}
-      <section id="projects" className="py-5 bg-light border-top border-bottom">
+      <section id="projects" className="py-5 border-top border-bottom section-surface">
         <div
           ref={projectsRef}
           className={`container reveal ${projectsVisible ? "is-visible" : ""}`}
@@ -352,7 +352,7 @@ export default function Homepage() {
                     // },
                   ].map((c) => (
                     <div className="col-12 col-md-6 col-lg-4" key={c.title}>
-                      <div className="cert-card2 rounded-4 border bg-white shadow-sm h-100 overflow-hidden">
+                      <div className="cert-card2 rounded-4 border shadow-sm h-100 overflow-hidden">
                         {/* immagine certificato */}
                         <a
                           href={c.file}
@@ -439,13 +439,13 @@ export default function Homepage() {
 
               <div className="d-flex flex-wrap gap-3">
                 <a
-                  className="btn btn-outline-dark"
+                  className="btn btn-outline-light"
                   href="mailto:moraru495@gmail.com"
                 >
                   <i className="fa-solid fa-envelope me-2"></i>Email
                 </a>
                 <a
-                  className="btn btn-outline-dark"
+                  className="btn btn-outline-light"
                   href="https://www.linkedin.com/in/stefan-moraru-6230641b8/"
                   target="_blank"
                   rel="noreferrer"
@@ -453,7 +453,7 @@ export default function Homepage() {
                   <i className="fa-brands fa-linkedin me-2"></i>LinkedIn
                 </a>
                 <a
-                  className="btn btn-outline-dark"
+                  className="btn btn-outline-light"
                   href="https://github.com/Steopa2001"
                   target="_blank"
                   rel="noreferrer"
@@ -465,7 +465,7 @@ export default function Homepage() {
 
             {/* form */}
             <div className="col-12 col-lg-7">
-              <div className="contact-card p-4 p-md-5 rounded-4 border bg-white shadow-sm h-100">
+              <div className="contact-card p-4 p-md-5 rounded-4 border shadow-sm h-100">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();

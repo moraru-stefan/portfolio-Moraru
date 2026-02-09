@@ -42,7 +42,7 @@ export default function Header() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <nav className="navbar navbar-expand-lg sticky-top">
       <div className="container">
         <a
           className={`nav-link ${active === "home" ? "active" : ""}`}
