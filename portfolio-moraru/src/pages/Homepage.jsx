@@ -1,10 +1,12 @@
 import projectsData from "../data/projects";
 import useReveal from "../hooks/useReveal";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
 
 export default function Homepage() {
+  const heroGreeting = "Ciao, sono Moraru Stefan";
+  const greetingPrefix = "Ciao, sono ";
   const [heroRef, heroVisible] = useReveal();
   const [aboutRef, aboutVisible] = useReveal();
   const [projectsRef, projectsVisible] = useReveal();
@@ -12,6 +14,16 @@ export default function Homepage() {
   const [showcaseTab, setShowcaseTab] = useState("projects");
   const [tabAnim, setTabAnim] = useState(true);
   const [pathRef, pathVisible] = useReveal();
+  const [typedHeroText, setTypedHeroText] = useState("");
+  const [typingDone, setTypingDone] = useState(false);
+  const hasStartedTyping = useRef(false);
+  const techStackCount = new Set(projectsData.flatMap((p) => p.tech)).size;
+  const featuredProject =
+    projectsData.find((p) => p.tech.some((t) => /react/i.test(t))) ||
+    projectsData[0];
+  const secondaryProjects = projectsData.filter(
+    (p) => p.title !== featuredProject?.title,
+  );
 
   const changeTab = (next) => {
     if (next === showcaseTab) return;
@@ -19,6 +31,45 @@ export default function Homepage() {
     setShowcaseTab(next);
     requestAnimationFrame(() => setTabAnim(true));
   };
+
+  const setCardGlow = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+  };
+
+  useEffect(() => {
+    if (!heroVisible || hasStartedTyping.current) return;
+    hasStartedTyping.current = true;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedHeroText(heroGreeting);
+      setTypingDone(true);
+      return;
+    }
+
+    let charIndex = 0;
+    let typingIntervalId;
+    const typingStartTimeoutId = window.setTimeout(() => {
+      typingIntervalId = window.setInterval(() => {
+        charIndex += 1;
+        setTypedHeroText(heroGreeting.slice(0, charIndex));
+
+        if (charIndex >= heroGreeting.length) {
+          window.clearInterval(typingIntervalId);
+          setTypingDone(true);
+        }
+      }, 68);
+    }, 250);
+
+    return () => {
+      window.clearTimeout(typingStartTimeoutId);
+      if (typingIntervalId) window.clearInterval(typingIntervalId);
+    };
+  }, [heroGreeting, heroVisible]);
+
+  const typedGreeting = typedHeroText.slice(0, greetingPrefix.length);
+  const typedName = typedHeroText.slice(greetingPrefix.length);
 
   return (
     <>
@@ -33,9 +84,19 @@ export default function Homepage() {
               <p className="text-uppercase text-muted small mb-2">
                 Junior Full‑Stack Web Developer
               </p>
-              <h1 className="display-5 fw-bold mb-3">
-                Ciao, sono{" "}
-                <span className="text-primary">Moraru Stefan</span>{" "}
+              <h1
+                className="display-5 fw-bold mb-3 hero-typing-title"
+                aria-label={heroGreeting}
+              >
+                {typedGreeting}
+                <span className={typedName ? "text-primary" : ""}>
+                  {typedName}
+                </span>
+                {!typingDone && (
+                  <span className="typing-cursor" aria-hidden="true">
+                    |
+                  </span>
+                )}
               </h1>
               <p className="lead text-muted">
                 Creo interfacce web moderne, responsive e intuitive, con grande
@@ -58,11 +119,13 @@ export default function Homepage() {
               </div>
             </div>
             <div className="img-col col-12 col-lg-5 text-center">
-              <img
-                className="stefan-img img-fluid rounded-4 shadow-sm"
-                src={`${BASE}cv-image.png`}
-                alt="Ritratto del developer"
-              />
+              <div className="hero-photo-3d">
+                <img
+                  className="stefan-img img-fluid"
+                  src={`${BASE}cv-image.png`}
+                  alt="Ritratto del developer"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -73,15 +136,30 @@ export default function Homepage() {
           ref={aboutRef}
           className={`container reveal ${aboutVisible ? "is-visible" : ""}`}
         >
-          <h2 className="h3 fw-bold mb-3">Chi sono</h2>
-          <p className="text-muted">
-            Sono uno sviluppatore web junior con competenze full‑stack e un
-            forte orientamento al front-end. Ho completato un corso intensivo di
-            oltre 600 ore come Full‑Stack Web Developer con Boolean, durante il
-            quale ho realizzato diversi progetti concreti. Lavoro con React,
-            HTML, CSS e JavaScript per il front-end, e Node.js, Express e MySQL
-            per il back-end.
-          </p>
+          <div className="about-3d-shell">
+            <article className="about-3d-card">
+              <div className="about-3d-content">
+                <p className="about-kicker text-uppercase mb-2">Profilo</p>
+                <h2 className="h3 fw-bold mb-3">Chi sono</h2>
+                <p className="text-muted mb-3">
+                  Sono uno sviluppatore web junior con competenze full‑stack e
+                  un forte orientamento al front-end. Ho completato un corso
+                  intensivo di oltre 600 ore come Full‑Stack Web Developer con
+                  Boolean, durante il quale ho realizzato diversi progetti
+                  concreti. Lavoro con React, HTML, CSS e JavaScript per il
+                  front-end, e Node.js, Express e MySQL per il back-end.
+                </p>
+
+                <div className="about-tech">
+                  {["React", "Node.js", "Express", "MySQL"].map((tech) => (
+                    <span key={tech} className="about-tech-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -219,6 +297,16 @@ export default function Homepage() {
               <p className="text-muted mb-0">
                 Progetti, certificati e tech stack.
               </p>
+              <div className="showcase-kpis mt-3">
+                <span className="showcase-kpi">
+                  <strong>{projectsData.length}</strong>
+                  Progetti Live
+                </span>
+                <span className="showcase-kpi">
+                  <strong>{techStackCount}</strong>
+                  Tecnologie
+                </span>
+              </div>
             </div>
 
             {/* Tabs */}
@@ -266,40 +354,80 @@ export default function Homepage() {
             {/* TAB: PROJECTS */}
             {showcaseTab === "projects" && (
               <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
-                <div className="row g-4">
-                  {projectsData.map((p, idx) => (
-                    <div key={idx} className="col-12 col-md-6 col-lg-4">
-                      <div
-                        className="card h-100 border-0 project-card"
-                        onMouseMove={(e) => {
-                          const r = e.currentTarget.getBoundingClientRect();
-                          e.currentTarget.style.setProperty(
-                            "--mx",
-                            `${e.clientX - r.left}px`,
-                          );
-                          e.currentTarget.style.setProperty(
-                            "--my",
-                            `${e.clientY - r.top}px`,
-                          );
-                        }}
+                <div className="projects-layout">
+                  {featuredProject && (
+                    <article
+                      className="project-card project-feature"
+                      onMouseMove={setCardGlow}
+                    >
+                      <div className="project-feature-media-wrap">
+                        <img
+                          src={featuredProject.image}
+                          className="project-thumb project-feature-media"
+                          alt={`Screenshot ${featuredProject.title}`}
+                        />
+                        <span className="project-feature-badge">In evidenza</span>
+                      </div>
+
+                      <div className="project-feature-body">
+                        <h3 className="h4 fw-bold mb-2">{featuredProject.title}</h3>
+                        <p className="text-muted mb-3">
+                          {featuredProject.description}
+                        </p>
+
+                        <div className="project-tags mb-4">
+                          {featuredProject.tech.map((t) => (
+                            <span key={t} className="project-tag">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="project-actions">
+                          <a
+                            href={featuredProject.demoUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-primary"
+                          >
+                            <i className="fa-solid fa-arrow-up-right-from-square me-2"></i>
+                            Live Demo
+                          </a>
+                          <a
+                            href={featuredProject.codeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-outline-primary"
+                          >
+                            <i className="fa-brands fa-github me-2"></i>
+                            Codice
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  )}
+
+                  <div className="projects-side-grid">
+                    {secondaryProjects.map((p) => (
+                      <article
+                        key={p.title}
+                        className="project-card project-mini"
+                        onMouseMove={setCardGlow}
                       >
                         <img
                           src={p.image}
-                          className="card-img-top project-thumb"
+                          className="project-thumb project-mini-thumb"
                           alt={`Screenshot ${p.title}`}
                         />
-                        <div className="card-body d-flex flex-column">
-                          <h3 className="h5 card-title">{p.title}</h3>
-                          <p className="card-text text-muted small flex-grow-1">
+                        <div className="project-mini-body">
+                          <h3 className="h5 card-title mb-2">{p.title}</h3>
+                          <p className="text-muted small mb-3 project-mini-desc">
                             {p.description}
                           </p>
 
-                          <div className="mb-3 d-flex flex-wrap gap-1">
-                            {p.tech.map((t) => (
-                              <span
-                                key={t}
-                                className="badge text-bg-light border"
-                              >
+                          <div className="project-tags project-tags-mini mb-3">
+                            {p.tech.slice(0, 4).map((t) => (
+                              <span key={t} className="project-tag">
                                 {t}
                               </span>
                             ))}
@@ -312,7 +440,6 @@ export default function Homepage() {
                               rel="noreferrer"
                               className="btn btn-primary btn-sm w-50"
                             >
-                              <i className="fa-solid fa-arrow-up-right-from-square me-2"></i>
                               Demo
                             </a>
                             <a
@@ -321,14 +448,13 @@ export default function Homepage() {
                               rel="noreferrer"
                               className="btn btn-outline-primary btn-sm w-50"
                             >
-                              <i className="fa-brands fa-github me-2"></i>
                               Codice
                             </a>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
+                      </article>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

@@ -11,13 +11,14 @@ export default function BackToTop() {
   }, []);
 
   return (
-    <a
-      href="#home"
-      className={`backtotop ${show ? "show" : ""}`}
+    <button
+      type="button"
+      className={`backtotop site-3d ${show ? "show" : ""}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Torna su"
       title="Torna su"
     >
       ↑
-    </a>
+    </button>
   );
 }

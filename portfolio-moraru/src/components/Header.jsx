@@ -15,16 +15,6 @@ export default function Header() {
   const handler = () => {
     const y = window.scrollY + 120;
 
-    // se siamo a fine pagina, attiva contatti
-    const bottom =
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 2;
-
-    if (bottom) {
-      setActive("contact");
-      return;
-    }
-
     let current = "home";
 
     for (const id of ids) {
@@ -42,15 +32,20 @@ export default function Header() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg sticky-top">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg sticky-top main-nav">
+      <div className="container nav-shell">
         <a
-          className={`nav-link ${active === "home" ? "active" : ""}`}
+          className="nav-brand"
           href="#home"
           onClick={() => setIsOpen(false)}
         >
-          <i className="fa-solid fa-code me-2"></i>
-          Moraru Stefan
+          <span className="nav-brand-mark" aria-hidden="true">
+            <i className="fa-solid fa-code"></i>
+          </span>
+          <span className="nav-brand-text">
+            <span className="nav-brand-title">Moraru Stefan</span>
+            <span className="nav-brand-sub">Full-Stack Developer</span>
+          </span>
         </a>
 
         {/* Bottone hamburger */}
@@ -70,34 +65,37 @@ export default function Header() {
 
         {/* Menu di navigazione */}
         <div
-          className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+          className={`collapse navbar-collapse nav-collapse ${isOpen ? "show" : ""}`}
           id="nav"
         >
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-semibold">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-menu">
             <li className="nav-item">
               <a
-                className={`nav-link ${active === "about" ? "active" : ""}`}
+                className={`nav-link nav-pill ${active === "about" ? "active" : ""}`}
                 href="#about"
                 onClick={() => setIsOpen(false)}
               >
+                <i className="fa-regular fa-user"></i>
                 Chi sono
               </a>
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${active === "projects" ? "active" : ""}`}
+                className={`nav-link nav-pill ${active === "projects" ? "active" : ""}`}
                 href="#projects"
                 onClick={() => setIsOpen(false)}
               >
+                <i className="fa-solid fa-layer-group"></i>
                 Progetti
               </a>
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${active === "contact" ? "active" : ""}`}
+                className={`nav-link nav-pill ${active === "contact" ? "active" : ""}`}
                 href="#contact"
                 onClick={() => setIsOpen(false)}
               >
+                <i className="fa-regular fa-envelope"></i>
                 Contatti
               </a>
             </li>

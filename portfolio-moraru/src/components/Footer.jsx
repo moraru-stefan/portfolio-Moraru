@@ -1,7 +1,7 @@
 export default function Footer({ year }) {
   return (
     <footer className="py-4 border-top section-surface">
-      <div className="container small text-muted d-flex flex-wrap gap-2 justify-content-between align-items-center">
+      <div className="container small text-muted d-flex flex-wrap gap-2 justify-content-between align-items-center site-3d site-3d-static">
         <span>© {year} Moraru Stefan • Portfolio</span>
         <a href="#home" className="link-secondary text-decoration-none">
           Torna su ↑
