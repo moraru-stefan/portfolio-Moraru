@@ -198,6 +198,10 @@ section {
   height: 44px;
   display: none;
   place-items: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  line-height: 1;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.18);
   color: #fff !important;
@@ -206,8 +210,12 @@ section {
 }
 
 .main-nav .nav-toggle i{
+  display: block;
+  width: 1em;
+  line-height: 1;
+  text-align: center;
   color: inherit !important;
-  font-size: 1.15rem;
+  font-size: 1.15rem !important;
   transition: transform .24s ease;
 }
 
@@ -877,6 +885,15 @@ footer a:hover {
   .img-col .stefan-img{
     width: min(100%, 210px);
     margin: 0 auto;
+  }
+
+  .project-mini-desc{
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: initial;
+    overflow: visible;
+    font-size: .92rem;
+    line-height: 1.45;
   }
 
 

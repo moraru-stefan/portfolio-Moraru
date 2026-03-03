@@ -213,9 +213,7 @@ export default function Homepage() {
                   <span className="badge text-bg-light border">
                     2021 • 2025
                   </span>
-                  <span className="text-muted small">
-                    Minuterie3M • Full-time • In sede
-                  </span>
+                  <span className="text-muted small">Full-time • In sede</span>
                 </div>
 
                 <h3 className="h5 mb-1">

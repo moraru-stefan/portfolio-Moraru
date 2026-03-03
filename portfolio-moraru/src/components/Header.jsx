@@ -57,9 +57,9 @@ export default function Header() {
           aria-label="Toggle navigation"
         >
           {isOpen ? (
-            <i className="fa-solid fa-xmark fs-3"></i>
+            <i className="fa-solid fa-xmark"></i>
           ) : (
-            <i className="fa-solid fa-bars fs-3"></i>
+            <i className="fa-solid fa-bars"></i>
           )}
         </button>
 
