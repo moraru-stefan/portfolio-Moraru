@@ -1,5 +1,6 @@
 /* ========== Tokens ========== */
 :root {
+  --anchor-offset: 96px;
   --primary: #7c3aed;
   --primary-dark: #6d28d9;
   --light-bg: transparent; 
@@ -24,6 +25,7 @@
 /* ========== Base ========== */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
 }
 
 html, body{
@@ -77,8 +79,10 @@ body::after{
 }
 
 /* offset per navbar sticky */
-section {
-  scroll-margin-top: 80px;
+header[id],
+section[id],
+footer[id] {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 /* ========== Navbar ========== */
