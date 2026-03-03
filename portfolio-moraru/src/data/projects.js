@@ -16,7 +16,7 @@ const projectCatalogByLanguage = {
       description:
         "SPA sviluppata con React e Vite per sfogliare, filtrare e confrontare smartphone, salvare preferiti e vedere i dettagli di ogni modello.",
       tech: ["React", "Vite", "JavaScript", "Bootstrap", "CSS"],
-      image: "smartphonehub.png",
+      image: "smartphone-hub.png",
       demoUrl: "https://smartphonehub-front.onrender.com/",
       codeUrl:
         "https://github.com/Steopa2001/progetto-finale-spec-frontend-front",
