@@ -558,10 +558,39 @@ footer[id] {
 
 /* hero image 3D frame */
 .hero-photo-3d{
+  --hero-mx: 50%;
+  --hero-my: 50%;
+  --hero-shift-x: 0px;
+  --hero-shift-y: 0px;
   position: relative;
   display: inline-block;
   isolation: isolate;
   z-index: 0;
+  transition: filter .35s ease;
+}
+
+.hero-hover-glow{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(300px, 34vw, 470px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(.94);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  background:
+    radial-gradient(
+      circle at var(--hero-mx) var(--hero-my),
+      rgba(255,255,255,.22),
+      rgba(167,139,250,.20) 22%,
+      rgba(34,211,238,.16) 40%,
+      rgba(124,58,237,.08) 60%,
+      transparent 74%
+    );
+  filter: blur(12px) saturate(130%);
+  transition: opacity .28s ease, transform .34s cubic-bezier(.22,.61,.36,1);
 }
 
 .hero-photo-3d::before{
@@ -583,6 +612,7 @@ footer[id] {
   filter: blur(7px) saturate(118%);
   opacity: .92;
   animation: hero-orb-float 8.5s ease-in-out infinite;
+  transition: filter .36s ease, opacity .36s ease;
 }
 
 .hero-photo-3d::after{
@@ -599,6 +629,28 @@ footer[id] {
   box-shadow:
     inset 0 0 45px rgba(167,139,250,.18),
     0 0 56px rgba(34,211,238,.12);
+  transition: box-shadow .36s ease;
+}
+
+.hero-photo-3d.is-hovering .hero-hover-glow{
+  opacity: .9;
+  transform:
+    translate(
+      calc(-50% + var(--hero-shift-x)),
+      calc(-50% + var(--hero-shift-y))
+    )
+    scale(1.04);
+}
+
+.hero-photo-3d.is-hovering::before{
+  filter: blur(10px) saturate(132%);
+  opacity: .98;
+}
+
+.hero-photo-3d.is-hovering::after{
+  box-shadow:
+    inset 0 0 52px rgba(167,139,250,.24),
+    0 0 72px rgba(34,211,238,.2);
 }
 
 .hero-orbit{
@@ -1125,6 +1177,10 @@ footer a:hover {
   .hero-orbit{
     animation: none;
     transform: translate(-50%, -50%);
+  }
+
+  .hero-hover-glow{
+    display: none;
   }
 }
 
