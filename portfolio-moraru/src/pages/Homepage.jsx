@@ -537,7 +537,7 @@ export default function Homepage({ language, text }) {
                     { alt: "Bootstrap", src: `${BASE}Bootstrap.png` },
                     { alt: "Tailwind", src: `${BASE}tailwindcss.png` },
                     { alt: "Node.js", src: `${BASE}Node-js.png` },
-                    { alt: "Express", src: `${BASE}Express.png` },
+                    { alt: "Express", src: `${BASE}express-log.png` },
                     { alt: "MySQL", src: `${BASE}mySQL.png` },
                     { alt: "Git", src: `${BASE}git.png` },
                   ].map((t) => (
