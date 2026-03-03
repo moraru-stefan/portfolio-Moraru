@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function BackToTop() {
+export default function BackToTop({ text }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -15,8 +15,8 @@ export default function BackToTop() {
       type="button"
       className={`backtotop site-3d ${show ? "show" : ""}`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      aria-label="Torna su"
-      title="Torna su"
+      aria-label={text.label}
+      title={text.label}
     >
       ↑
     </button>

@@ -2,11 +2,26 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import BackToTop from "./components/BackToTop.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { SITE_TEXT } from "./data/translations.js";
 
 
 export default function App() {
   const year = new Date().getFullYear();
+  const [language, setLanguage] = useState("it");
+  const text = SITE_TEXT[language] || SITE_TEXT.it;
+
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("portfolio-language");
+    if (savedLanguage && SITE_TEXT[savedLanguage]) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    window.localStorage.setItem("portfolio-language", language);
+  }, [language]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -109,12 +124,16 @@ export default function App() {
         <div className="bg-stars bg-stars-near"></div>
         <div className="bg-shooting"></div>
       </div>
-      <Header />
+      <Header
+        language={language}
+        onLanguageChange={setLanguage}
+        text={text.header}
+      />
       <main>
-        <Homepage/>
+        <Homepage language={language} text={text.homepage} />
       </main>
-      <BackToTop />
-      <Footer year={year} />
+      <BackToTop text={text.backToTop} />
+      <Footer year={year} text={text.footer} />
     </>
   );
 }

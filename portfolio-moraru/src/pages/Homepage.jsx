@@ -1,12 +1,18 @@
-import projectsData from "../data/projects";
+import { getProjectsData } from "../data/projects";
 import useReveal from "../hooks/useReveal";
 import { useEffect, useRef, useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
 
-export default function Homepage() {
-  const heroGreeting = "Ciao, sono Moraru Stefan";
-  const greetingPrefix = "Ciao, sono ";
+export default function Homepage({ language, text }) {
+  const projectsData = getProjectsData(language);
+  const heroGreeting = text.heroGreeting;
+  const greetingPrefix = text.greetingPrefix;
+  const about = text.about;
+  const path = text.path;
+  const showcase = text.showcase;
+  const certificatesText = text.certificates;
+  const contact = text.contact;
   const [heroRef, heroVisible] = useReveal();
   const [aboutRef, aboutVisible] = useReveal();
   const [projectsRef, projectsVisible] = useReveal();
@@ -18,6 +24,7 @@ export default function Homepage() {
   const [typingDone, setTypingDone] = useState(false);
   const [showWave, setShowWave] = useState(false);
   const hasStartedTyping = useRef(false);
+  const lastGreetingRef = useRef(heroGreeting);
   const techStackCount = new Set(projectsData.flatMap((p) => p.tech)).size;
   const featuredProject =
     projectsData.find((p) => p.tech.some((t) => /react/i.test(t))) ||
@@ -25,6 +32,13 @@ export default function Homepage() {
   const secondaryProjects = projectsData.filter(
     (p) => p.title !== featuredProject?.title,
   );
+
+  useEffect(() => {
+    if (lastGreetingRef.current !== heroGreeting) {
+      hasStartedTyping.current = false;
+      lastGreetingRef.current = heroGreeting;
+    }
+  }, [heroGreeting]);
 
   const changeTab = (next) => {
     if (next === showcaseTab) return;
@@ -100,7 +114,7 @@ export default function Homepage() {
           <div className="row align-items-center g-4">
             <div className="col-12 col-lg-7">
               <p className="text-uppercase text-muted small mb-2">
-                Junior Full‑Stack Web Developer
+                {text.role}
               </p>
               <h1
                 className="display-5 fw-bold mb-3 hero-typing-title"
@@ -123,13 +137,12 @@ export default function Homepage() {
                 )}
               </h1>
               <p className="lead text-muted">
-                Creo interfacce web moderne, responsive e intuitive, con grande
-                attenzione all’esperienza utente.
+                {text.heroLead}
               </p>
               <div className="d-flex gap-3 mt-4">
                 <a href="#projects" className="btn btn-primary">
                   <i className="fa-solid fa-folder-open me-2"></i>
-                  Guarda i progetti
+                  {text.ctaProjects}
                 </a>
                 <a
                   href={`${BASE}Moraru-Stefan-cv.pdf`}
@@ -138,7 +151,7 @@ export default function Homepage() {
                   rel="noreferrer"
                 >
                   <i className="fa-solid fa-file-arrow-down me-2"></i>
-                  Scarica CV
+                  {text.ctaDownloadCv}
                 </a>
               </div>
             </div>
@@ -147,7 +160,7 @@ export default function Homepage() {
                 <img
                   className="stefan-img img-fluid"
                   src={`${BASE}cv-image.png`}
-                  alt="Ritratto del developer"
+                  alt={text.portraitAlt}
                 />
               </div>
             </div>
@@ -163,19 +176,12 @@ export default function Homepage() {
           <div className="about-3d-shell">
             <article className="about-3d-card">
               <div className="about-3d-content">
-                <p className="about-kicker text-uppercase mb-2">Profilo</p>
-                <h2 className="h3 fw-bold mb-3">Chi sono</h2>
-                <p className="text-muted mb-3">
-                  Sono uno sviluppatore web junior con competenze full‑stack e
-                  un forte orientamento al front-end. Ho completato un corso
-                  intensivo di oltre 600 ore come Full‑Stack Web Developer con
-                  Boolean, durante il quale ho realizzato diversi progetti
-                  concreti. Lavoro con React, HTML, CSS e JavaScript per il
-                  front-end, e Node.js, Express e MySQL per il back-end.
-                </p>
+                <p className="about-kicker text-uppercase mb-2">{about.kicker}</p>
+                <h2 className="h3 fw-bold mb-3">{about.title}</h2>
+                <p className="text-muted mb-3">{about.description}</p>
 
                 <div className="about-tech">
-                  {["React", "Node.js", "Express", "MySQL"].map((tech) => (
+                  {about.tech.map((tech) => (
                     <span key={tech} className="about-tech-pill">
                       {tech}
                     </span>
@@ -195,11 +201,8 @@ export default function Homepage() {
         >
           <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
             <div>
-              <h2 className="h3 fw-bold mb-1">Il mio percorso</h2>
-              <p className="text-muted mb-0">
-                Formazione ed esperienza: il mio percorso fino allo sviluppo
-                web.
-              </p>
+              <h2 className="h3 fw-bold mb-1">{path.title}</h2>
+              <p className="text-muted mb-0">{path.subtitle}</p>
             </div>
           </div>
 
@@ -210,21 +213,18 @@ export default function Homepage() {
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
                   <span className="badge text-bg-light border">
-                    2015 • 2020
+                    {path.school.period}
                   </span>
-                  <span className="text-muted small">Lecco, Lombardia</span>
+                  <span className="text-muted small">{path.school.meta}</span>
                 </div>
 
-                <h3 className="h5 mb-1">
-                  Istituto Superiore Statale “P.A. Fiocchi”
-                </h3>
-                <p className="text-muted mb-2">
-                  Diploma Istituto Tecnico e Professionale
-                </p>
+                <h3 className="h5 mb-1">{path.school.title}</h3>
+                <p className="text-muted mb-2">{path.school.description}</p>
 
                 <ul className="path-list">
-                  <li>Diploma conseguito</li>
-                  <li>Base tecnica e metodo di studio</li>
+                  {path.school.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </article>
@@ -235,39 +235,25 @@ export default function Homepage() {
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
                   <span className="badge text-bg-light border">
-                    2021 • 2025
+                    {path.work.period}
                   </span>
-                  <span className="text-muted small">Full-time • In sede</span>
+                  <span className="text-muted small">{path.work.meta}</span>
                 </div>
 
-                <h3 className="h5 mb-1">
-                  Tecnico di Produzione / Tecnico Operativo
-                </h3>
-                <p className="text-muted mb-3">
-                  Durante tre anni e mezzo nel settore metalmeccanico ho gestito
-                  attività operative e di manutenzione, usando terminali e
-                  software gestionali di reparto, lavorando in team e
-                  contribuendo agli obiettivi produttivi.
-                </p>
+                <h3 className="h5 mb-1">{path.work.title}</h3>
+                <p className="text-muted mb-3">{path.work.description}</p>
 
                 <h4 className="h6 text-uppercase text-muted mb-2">
-                  Competenze sviluppate
+                  {path.work.listTitle}
                 </h4>
                 <ul className="path-list">
-                  <li>Lavoro in team e collaborazione</li>
-                  <li>Gestione scadenze e rispetto tempi di consegna</li>
-                  <li>Problem solving operativo e attenzione alla qualità</li>
-                  <li>Adattabilità e lavoro sotto pressione</li>
+                  {path.work.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
 
                 <div className="d-flex flex-wrap gap-2 mt-3">
-                  {[
-                    "Teamwork",
-                    "Gestione del tempo",
-                    "Problem solving",
-                    "Attenzione ai dettagli",
-                    "Adattabilità",
-                  ].map((s) => (
+                  {path.work.tags.map((s) => (
                     <span
                       key={s}
                       className="badge rounded-pill text-bg-light border"
@@ -285,21 +271,18 @@ export default function Homepage() {
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
                   <span className="badge text-bg-light border">
-                    2025 • 2026
+                    {path.booleanCourse.period}
                   </span>
-                  <span className="text-muted small">Boolean</span>
+                  <span className="text-muted small">{path.booleanCourse.meta}</span>
                 </div>
 
-                <h3 className="h5 mb-1">Corso Full-Stack Web Developer</h3>
-                <p className="text-muted mb-2">
-                  Percorso intensivo completato nel 2026, orientato a progetti
-                  pratici.
-                </p>
+                <h3 className="h5 mb-1">{path.booleanCourse.title}</h3>
+                <p className="text-muted mb-2">{path.booleanCourse.description}</p>
 
                 <ul className="path-list">
-                  <li>Front-end: HTML, CSS, JavaScript, React</li>
-                  <li>Back-end: Node.js, Express, MySQL</li>
-                  <li>Progetti reali + lavoro in team</li>
+                  {path.booleanCourse.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </article>
@@ -315,18 +298,16 @@ export default function Homepage() {
         >
           <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
             <div>
-              <h2 className="h3 fw-bold mb-1">I miei lavori</h2>
-              <p className="text-muted mb-0">
-                Progetti, certificati e tech stack.
-              </p>
+              <h2 className="h3 fw-bold mb-1">{showcase.title}</h2>
+              <p className="text-muted mb-0">{showcase.subtitle}</p>
               <div className="showcase-kpis mt-3">
                 <span className="showcase-kpi">
                   <strong>{projectsData.length}</strong>
-                  Progetti Live
+                  {showcase.liveProjects}
                 </span>
                 <span className="showcase-kpi">
                   <strong>{techStackCount}</strong>
-                  Tecnologie
+                  {showcase.technologies}
                 </span>
               </div>
             </div>
@@ -342,7 +323,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("projects")}
               >
-                Progetti
+                {showcase.tabs.projects}
               </button>
 
               <button
@@ -354,7 +335,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("certificates")}
               >
-                Certificati
+                {showcase.tabs.certificates}
               </button>
 
               <button
@@ -366,7 +347,7 @@ export default function Homepage() {
                 }`}
                 onClick={() => changeTab("stack")}
               >
-                Tecnologie
+                {showcase.tabs.stack}
               </button>
             </div>
           </div>
@@ -386,9 +367,9 @@ export default function Homepage() {
                         <img
                           src={featuredProject.image}
                           className="project-thumb project-feature-media"
-                          alt={`Screenshot ${featuredProject.title}`}
+                          alt={`Screenshot - ${featuredProject.title}`}
                         />
-                        <span className="project-feature-badge">In evidenza</span>
+                        <span className="project-feature-badge">{showcase.featured}</span>
                       </div>
 
                       <div className="project-feature-body">
@@ -413,7 +394,7 @@ export default function Homepage() {
                             className="btn btn-primary"
                           >
                             <i className="fa-solid fa-arrow-up-right-from-square me-2"></i>
-                            Live Demo
+                            {showcase.liveDemo}
                           </a>
                           <a
                             href={featuredProject.codeUrl}
@@ -422,7 +403,7 @@ export default function Homepage() {
                             className="btn btn-outline-primary"
                           >
                             <i className="fa-brands fa-github me-2"></i>
-                            Codice
+                            {showcase.code}
                           </a>
                         </div>
                       </div>
@@ -439,7 +420,7 @@ export default function Homepage() {
                         <img
                           src={p.image}
                           className="project-thumb project-mini-thumb"
-                          alt={`Screenshot ${p.title}`}
+                          alt={`Screenshot - ${p.title}`}
                         />
                         <div className="project-mini-body">
                           <h3 className="h5 card-title mb-2">{p.title}</h3>
@@ -462,7 +443,7 @@ export default function Homepage() {
                               rel="noreferrer"
                               className="btn btn-primary btn-sm w-50"
                             >
-                              Demo
+                              {showcase.demo}
                             </a>
                             <a
                               href={p.codeUrl}
@@ -470,7 +451,7 @@ export default function Homepage() {
                               rel="noreferrer"
                               className="btn btn-outline-primary btn-sm w-50"
                             >
-                              Codice
+                              {showcase.code}
                             </a>
                           </div>
                         </div>
@@ -508,10 +489,10 @@ export default function Homepage() {
                           rel={c.file !== "#" ? "noreferrer" : undefined}
                           onClick={(e) => c.file === "#" && e.preventDefault()}
                           className="cert-media"
-                          aria-label={`Apri ${c.title}`}
-                          title={`Apri ${c.title}`}
+                          aria-label={`${certificatesText.openLabel} ${c.title}`}
+                          title={`${certificatesText.openLabel} ${c.title}`}
                         >
-                          <img src={c.img} alt={`Certificato: ${c.title}`} />
+                          <img src={c.img} alt={`${certificatesText.imageAlt}: ${c.title}`} />
                         </a>
 
                         {/* testo */}
@@ -533,7 +514,7 @@ export default function Homepage() {
                                 c.file === "#" && e.preventDefault()
                               }
                             >
-                              Apri PDF
+                              {certificatesText.openPdf}
                             </a>
                           </div>
                         </div>
@@ -579,11 +560,8 @@ export default function Homepage() {
           <div className="row g-4 align-items-stretch">
             {/* testo + link */}
             <div className="col-12 col-lg-5">
-              <h2 className="h3 fw-bold mb-3">Contatti</h2>
-              <p className="text-muted mb-4">
-                Vuoi collaborare o hai domande? Compila il form oppure scrivimi
-                via email.
-              </p>
+              <h2 className="h3 fw-bold mb-3">{contact.title}</h2>
+              <p className="text-muted mb-4">{contact.lead}</p>
 
               <div className="d-flex flex-wrap gap-3">
                 <a
@@ -625,11 +603,11 @@ export default function Homepage() {
                     const message = fd.get("message")?.toString().trim();
 
                     const to = "moraru495@gmail.com";
-                    const fullSubject = `[Portfolio] ${subject || "Nuovo messaggio"}`;
+                    const fullSubject = `[Portfolio] ${subject || contact.form.defaultSubject}`;
                     const body =
-                      `Nome: ${name}\n` +
-                      `Email: ${email}\n\n` +
-                      `Messaggio:\n${message}\n`;
+                      `${contact.form.mailName}: ${name}\n` +
+                      `${contact.form.mailEmail}: ${email}\n\n` +
+                      `${contact.form.mailMessage}:\n${message}\n`;
 
                     const mailto = `mailto:${to}?subject=${encodeURIComponent(
                       fullSubject,
@@ -641,56 +619,56 @@ export default function Homepage() {
                 >
                   <div className="row g-3">
                     <div className="col-12 col-md-6">
-                      <label className="form-label">Nome</label>
+                      <label className="form-label">{contact.form.name}</label>
                       <input
                         className="form-control"
                         name="name"
                         type="text"
-                        placeholder="Il tuo nome"
+                        placeholder={contact.form.namePlaceholder}
                         required
                       />
                     </div>
 
                     <div className="col-12 col-md-6">
-                      <label className="form-label">Email</label>
+                      <label className="form-label">{contact.form.email}</label>
                       <input
                         className="form-control"
                         name="email"
                         type="email"
-                        placeholder="nome@email.com"
+                        placeholder={contact.form.emailPlaceholder}
                         required
                       />
                     </div>
 
                     <div className="col-12">
-                      <label className="form-label">Oggetto</label>
+                      <label className="form-label">{contact.form.subject}</label>
                       <input
                         className="form-control"
                         name="subject"
                         type="text"
-                        placeholder="Es. Collaborazione / Info"
+                        placeholder={contact.form.subjectPlaceholder}
                         required
                       />
                     </div>
 
                     <div className="col-12">
-                      <label className="form-label">Messaggio</label>
+                      <label className="form-label">{contact.form.message}</label>
                       <textarea
                         className="form-control"
                         name="message"
                         rows="5"
-                        placeholder="Scrivimi qui..."
+                        placeholder={contact.form.messagePlaceholder}
                         required
                       />
                     </div>
 
                     <div className="col-12 d-flex flex-wrap gap-2 align-items-center">
                       <button className="btn btn-primary" type="submit">
-                        <i className="fa-solid fa-paper-plane me-2"></i>Invia
+                        <i className="fa-solid fa-paper-plane me-2"></i>
+                        {contact.send}
                       </button>
                       <span className="contact-hint text-muted small">
-                        *Dopo l'invio si aprirà la tua email per confermare e
-                        spedire il messaggio.
+                        {contact.hint}
                       </span>
                     </div>
                   </div>
