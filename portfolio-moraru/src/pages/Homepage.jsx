@@ -25,13 +25,6 @@ export default function Homepage({ language, text }) {
   const [showWave, setShowWave] = useState(false);
   const hasStartedTyping = useRef(false);
   const lastGreetingRef = useRef(heroGreeting);
-  const techStackCount = new Set(projectsData.flatMap((p) => p.tech)).size;
-  const featuredProject =
-    projectsData.find((p) => p.tech.some((t) => /react/i.test(t))) ||
-    projectsData[0];
-  const secondaryProjects = projectsData.filter(
-    (p) => p.title !== featuredProject?.title,
-  );
 
   useEffect(() => {
     if (lastGreetingRef.current !== heroGreeting) {
@@ -303,16 +296,6 @@ export default function Homepage({ language, text }) {
             <div>
               <h2 className="h3 fw-bold mb-1">{showcase.title}</h2>
               <p className="text-muted mb-0">{showcase.subtitle}</p>
-              <div className="showcase-kpis mt-3 justify-content-center">
-                <span className="showcase-kpi">
-                  <strong>{projectsData.length}</strong>
-                  {showcase.liveProjects}
-                </span>
-                <span className="showcase-kpi">
-                  <strong>{techStackCount}</strong>
-                  {showcase.technologies}
-                </span>
-              </div>
             </div>
 
             {/* Tabs */}
@@ -361,106 +344,52 @@ export default function Homepage({ language, text }) {
             {showcaseTab === "projects" && (
               <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
                 <div className="projects-layout">
-                  {featuredProject && (
+                  {projectsData.map((p) => (
                     <article
-                      className="project-card project-feature"
+                      key={p.title}
+                      className="project-card project-mini"
                       onMouseMove={setCardGlow}
                     >
-                      <div className="project-feature-media-wrap">
-                        <img
-                          src={featuredProject.image}
-                          className="project-thumb project-feature-media"
-                          alt={`Screenshot - ${featuredProject.title}`}
-                        />
-                        <span className="project-feature-badge">{showcase.featured}</span>
-                      </div>
-
-                      <div className="project-feature-body">
-                        <h3 className="h4 fw-bold mb-2">{featuredProject.title}</h3>
-                        <p className="text-muted mb-3">
-                          {featuredProject.description}
+                      <img
+                        src={p.image}
+                        className="project-thumb project-mini-thumb"
+                        alt={`Screenshot - ${p.title}`}
+                      />
+                      <div className="project-mini-body">
+                        <h3 className="h5 card-title mb-2">{p.title}</h3>
+                        <p className="text-muted small mb-3 project-mini-desc">
+                          {p.description}
                         </p>
 
-                        <div className="project-tags mb-4">
-                          {featuredProject.tech.map((t) => (
+                        <div className="project-tags project-tags-mini mb-3">
+                          {p.tech.slice(0, 4).map((t) => (
                             <span key={t} className="project-tag">
                               {t}
                             </span>
                           ))}
                         </div>
 
-                        <div className="project-actions">
+                        <div className="d-flex gap-2">
                           <a
-                            href={featuredProject.demoUrl}
+                            href={p.demoUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="btn btn-primary"
+                            className="btn btn-primary btn-sm w-50"
                           >
-                            <i className="fa-solid fa-arrow-up-right-from-square me-2"></i>
-                            {showcase.liveDemo}
+                            {showcase.demo}
                           </a>
                           <a
-                            href={featuredProject.codeUrl}
+                            href={p.codeUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="btn btn-outline-primary"
+                            className="btn btn-outline-primary btn-sm w-50"
                           >
-                            <i className="fa-brands fa-github me-2"></i>
                             {showcase.code}
                           </a>
                         </div>
                       </div>
                     </article>
-                  )}
-
-                  <div className="projects-side-grid">
-                    {secondaryProjects.map((p) => (
-                      <article
-                        key={p.title}
-                        className="project-card project-mini"
-                        onMouseMove={setCardGlow}
-                      >
-                        <img
-                          src={p.image}
-                          className="project-thumb project-mini-thumb"
-                          alt={`Screenshot - ${p.title}`}
-                        />
-                        <div className="project-mini-body">
-                          <h3 className="h5 card-title mb-2">{p.title}</h3>
-                          <p className="text-muted small mb-3 project-mini-desc">
-                            {p.description}
-                          </p>
-
-                          <div className="project-tags project-tags-mini mb-3">
-                            {p.tech.slice(0, 4).map((t) => (
-                              <span key={t} className="project-tag">
-                                {t}
-                              </span>
-                            ))}
-                          </div>
-
-                          <div className="d-flex gap-2">
-                            <a
-                              href={p.demoUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="btn btn-primary btn-sm w-50"
-                            >
-                              {showcase.demo}
-                            </a>
-                            <a
-                              href={p.codeUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="btn btn-outline-primary btn-sm w-50"
-                            >
-                              {showcase.code}
-                            </a>
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </div>
             )}
