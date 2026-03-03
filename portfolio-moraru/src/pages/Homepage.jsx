@@ -157,6 +157,9 @@ export default function Homepage({ language, text }) {
             </div>
             <div className="img-col col-12 col-lg-5 text-center">
               <div className="hero-photo-3d">
+                <span className="hero-orbit" aria-hidden="true">
+                  <span className="hero-planet"></span>
+                </span>
                 <img
                   className="stefan-img img-fluid"
                   src={`${BASE}cv-image.png`}

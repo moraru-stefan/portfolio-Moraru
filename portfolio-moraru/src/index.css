@@ -597,6 +597,56 @@ section {
     0 0 56px rgba(34,211,238,.12);
 }
 
+.hero-orbit{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(296px, 33vw, 460px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  border: 1px solid rgba(167,139,250,.22);
+  box-shadow:
+    inset 0 0 22px rgba(124,58,237,.12),
+    0 0 30px rgba(34,211,238,.10);
+  animation: hero-orbit-rotate 14s linear infinite;
+}
+
+.hero-orbit::before{
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  border: 1px dashed rgba(34,211,238,.16);
+  opacity: .65;
+}
+
+.hero-planet{
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  width: clamp(12px, 1.05vw, 16px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(167,139,250,.95) 45%, rgba(124,58,237,.92) 75%);
+  box-shadow:
+    0 0 14px rgba(167,139,250,.68),
+    0 0 26px rgba(34,211,238,.34);
+}
+
+@keyframes hero-orbit-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @keyframes hero-orb-float {
   0%{
     transform: translate(-50%, -50%) scale(1);
@@ -1062,6 +1112,12 @@ footer a:hover {
     animation: none;
     transform: none;
   }
+
+  .hero-photo-3d::before,
+  .hero-orbit{
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* ========== Back to top ========== */
@@ -1128,13 +1184,31 @@ footer a:hover {
 }
 
 @media (max-width: 500px) {
+  .hero-orbit{
+    width: clamp(304px, 84vw, 360px);
+    top: 47%;
+    border-color: rgba(167,139,250,.18);
+  }
+
+  .hero-planet{
+    width: 11px;
+    top: -8px;
+  }
+
+  .hero-orbit::before{
+    inset: 12%;
+    opacity: .5;
+  }
+
   .hero-photo-3d::before{
-    width: clamp(210px, 62vw, 280px);
+    width: clamp(270px, 74vw, 332px);
+    top: 47%;
     opacity: .86;
   }
 
   .hero-photo-3d::after{
-    width: clamp(198px, 58vw, 252px);
+    width: clamp(256px, 70vw, 316px);
+    top: 47%;
   }
 
   #home .text-primary{
