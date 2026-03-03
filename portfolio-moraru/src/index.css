@@ -582,6 +582,14 @@ section {
   mask-size: 100% 100%;
 }
 
+@media (min-width: 992px){
+  .img-col .stefan-img{
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateX(10px);
+  }
+}
+
 /* about 3D card */
 .about-3d-shell{
   perspective: 1600px;
