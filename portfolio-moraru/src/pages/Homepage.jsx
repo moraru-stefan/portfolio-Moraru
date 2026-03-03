@@ -16,6 +16,7 @@ export default function Homepage() {
   const [pathRef, pathVisible] = useReveal();
   const [typedHeroText, setTypedHeroText] = useState("");
   const [typingDone, setTypingDone] = useState(false);
+  const [showWave, setShowWave] = useState(false);
   const hasStartedTyping = useRef(false);
   const techStackCount = new Set(projectsData.flatMap((p) => p.tech)).size;
   const featuredProject =
@@ -41,30 +42,47 @@ export default function Homepage() {
   useEffect(() => {
     if (!heroVisible || hasStartedTyping.current) return;
     hasStartedTyping.current = true;
+    setTypedHeroText("");
+    setTypingDone(false);
+    setShowWave(false);
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setTypedHeroText(heroGreeting);
       setTypingDone(true);
+      setShowWave(true);
       return;
     }
 
     let charIndex = 0;
-    let typingIntervalId;
-    const typingStartTimeoutId = window.setTimeout(() => {
-      typingIntervalId = window.setInterval(() => {
-        charIndex += 1;
-        setTypedHeroText(heroGreeting.slice(0, charIndex));
+    let typingTimeoutId = 0;
 
-        if (charIndex >= heroGreeting.length) {
-          window.clearInterval(typingIntervalId);
-          setTypingDone(true);
-        }
-      }, 68);
+    const getTypingDelay = (nextChar) => {
+      if (nextChar === ",") return 190 + Math.random() * 90;
+      if (nextChar === " ") return 80 + Math.random() * 40;
+      return 42 + Math.random() * 82;
+    };
+
+    const typeNextChar = () => {
+      charIndex += 1;
+      setTypedHeroText(heroGreeting.slice(0, charIndex));
+
+      if (charIndex >= heroGreeting.length) {
+        setTypingDone(true);
+        setShowWave(true);
+        return;
+      }
+
+      const nextChar = heroGreeting.charAt(charIndex);
+      typingTimeoutId = window.setTimeout(typeNextChar, getTypingDelay(nextChar));
+    };
+
+    const typingStartTimeoutId = window.setTimeout(() => {
+      typeNextChar();
     }, 250);
 
     return () => {
       window.clearTimeout(typingStartTimeoutId);
-      if (typingIntervalId) window.clearInterval(typingIntervalId);
+      if (typingTimeoutId) window.clearTimeout(typingTimeoutId);
     };
   }, [heroGreeting, heroVisible]);
 
@@ -91,6 +109,12 @@ export default function Homepage() {
                 {typedGreeting}
                 <span className={typedName ? "text-primary" : ""}>
                   {typedName}
+                  {showWave && typedName && (
+                    <span className="wave-emoji" aria-hidden="true">
+                      {" "}
+                      👋
+                    </span>
+                  )}
                 </span>
                 {!typingDone && (
                   <span className="typing-cursor" aria-hidden="true">

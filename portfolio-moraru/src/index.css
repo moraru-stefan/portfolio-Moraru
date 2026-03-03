@@ -351,12 +351,31 @@ section {
   }
 }
 
-/* wave emoji */
-#home .text-primary::after {
-  content: " 👋";
+#home .wave-emoji{
   display: inline-block;
   transform-origin: 70% 70%;
-  animation: wave 1.8s infinite ease-in-out;
+  will-change: transform, opacity, filter;
+  animation:
+    wave-pop .5s cubic-bezier(.19,1,.22,1),
+    wave 1.8s .5s infinite ease-in-out;
+}
+
+@keyframes wave-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(.55) rotate(-22deg);
+    filter: blur(1.2px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1) rotate(10deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0);
+  }
 }
 
 @keyframes wave {
@@ -882,6 +901,11 @@ footer a:hover {
 }
 
 @media (max-width: 500px) {
+  #home .text-primary{
+    display: inline-block;
+    white-space: nowrap;
+  }
+
   .img-col .stefan-img{
     width: min(100%, 210px);
     margin: 0 auto;
