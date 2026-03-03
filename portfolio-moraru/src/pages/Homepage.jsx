@@ -199,7 +199,7 @@ export default function Homepage({ language, text }) {
           ref={pathRef}
           className={`container reveal ${pathVisible ? "is-visible" : ""}`}
         >
-          <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+          <div className="d-flex flex-column align-items-center text-center gap-2 mb-4">
             <div>
               <h2 className="h3 fw-bold mb-1">{path.title}</h2>
               <p className="text-muted mb-0">{path.subtitle}</p>
@@ -296,11 +296,11 @@ export default function Homepage({ language, text }) {
           ref={projectsRef}
           className={`container reveal ${projectsVisible ? "is-visible" : ""}`}
         >
-          <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+          <div className="d-flex flex-column align-items-center text-center gap-3 mb-4">
             <div>
               <h2 className="h3 fw-bold mb-1">{showcase.title}</h2>
               <p className="text-muted mb-0">{showcase.subtitle}</p>
-              <div className="showcase-kpis mt-3">
+              <div className="showcase-kpis mt-3 justify-content-center">
                 <span className="showcase-kpi">
                   <strong>{projectsData.length}</strong>
                   {showcase.liveProjects}
@@ -313,7 +313,7 @@ export default function Homepage({ language, text }) {
             </div>
 
             {/* Tabs */}
-            <div className="showcase-tabs d-flex flex-wrap gap-2">
+            <div className="showcase-tabs d-flex flex-wrap gap-2 justify-content-center">
               <button
                 type="button"
                 className={`btn btn-sm ${
