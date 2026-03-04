@@ -460,12 +460,20 @@ footer[id] {
   }
 
   .main-nav .nav-collapse{
-    margin-top: .68rem;
+    position: absolute;
+    top: calc(100% + .55rem);
+    left: 0;
+    right: 0;
+    z-index: 1400;
+    margin-top: 0;
     padding: .55rem;
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,.14);
     background: rgba(12,18,42,.72);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    backdrop-filter: blur(12px);
   }
 
   .main-nav .nav-menu{
