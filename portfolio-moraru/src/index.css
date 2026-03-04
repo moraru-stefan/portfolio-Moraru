@@ -1231,6 +1231,10 @@ footer a:hover {
     transform: none;
   }
 
+  .bg-prisms{
+    display: none;
+  }
+
   .hero-photo-3d::before,
   .hero-orbit{
     animation: none;
@@ -1654,10 +1658,168 @@ h1,h2,h3,h4,h5,h6{ color: #f3f4f6; }
 }
 
 .bg-nebula,
+.bg-prisms,
 .bg-stars,
 .bg-shooting{
   position: absolute;
   inset: 0;
+}
+
+.bg-prisms{
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  z-index: 1;
+  opacity: calc(.2 + var(--fx-intensity) * .52);
+}
+
+.prism-wrap{
+  position: absolute;
+  transform-style: preserve-3d;
+  filter: saturate(calc(1 + var(--fx-intensity) * .28));
+  will-change: transform;
+}
+
+.prism-wrap-a{
+  top: 8%;
+  left: 6%;
+  transform:
+    translate3d(
+      calc(var(--mouse-x) * -46px),
+      calc(var(--scroll-progress) * -96px + var(--mouse-y) * -20px),
+      0
+    )
+    rotateX(7deg)
+    rotateY(-10deg);
+}
+
+.prism-wrap-b{
+  top: 36%;
+  right: 8%;
+  transform:
+    translate3d(
+      calc(var(--mouse-x) * 52px),
+      calc(var(--scroll-progress) * -132px + var(--mouse-y) * -24px),
+      0
+    )
+    rotateX(5deg)
+    rotateY(12deg);
+}
+
+.prism-wrap-c{
+  bottom: 9%;
+  left: 24%;
+  transform:
+    translate3d(
+      calc(var(--mouse-x) * -38px),
+      calc(var(--scroll-progress) * -72px + var(--mouse-y) * -14px),
+      0
+    )
+    rotateX(8deg)
+    rotateY(-14deg);
+}
+
+.prism{
+  position: relative;
+  display: block;
+  width: clamp(132px, 14vw, 228px);
+  aspect-ratio: 1;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.16);
+  transform-style: preserve-3d;
+  background:
+    linear-gradient(152deg, rgba(124,58,237,.24), rgba(34,211,238,.15) 45%, rgba(255,255,255,.05));
+  box-shadow:
+    0 26px 44px rgba(2,6,23,.36),
+    inset 0 1px 0 rgba(255,255,255,.2);
+  backdrop-filter: blur(2px);
+}
+
+.prism::before,
+.prism::after{
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.prism::before{
+  inset: 12%;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.22);
+  background:
+    radial-gradient(circle at 28% 30%, rgba(255,255,255,.5), transparent 52%),
+    linear-gradient(150deg, rgba(167,139,250,.3), rgba(34,211,238,.1));
+  transform: translateZ(20px);
+  box-shadow: 0 14px 30px rgba(2,6,23,.24);
+}
+
+.prism::after{
+  inset: 2px;
+  border: 1px solid rgba(167,139,250,.24);
+  transform: translateZ(-16px) scale(.93);
+  opacity: .68;
+}
+
+.prism-a{
+  animation: prism-float-a 16s ease-in-out infinite;
+}
+
+.prism-b{
+  width: clamp(110px, 11vw, 182px);
+  border-radius: 22px;
+  animation: prism-float-b 18s ease-in-out infinite;
+}
+
+.prism-c{
+  width: clamp(96px, 10vw, 164px);
+  border-radius: 20px;
+  animation: prism-float-c 14s ease-in-out infinite;
+}
+
+@keyframes prism-float-a{
+  0%{
+    transform: rotateX(60deg) rotateY(-20deg) rotateZ(8deg) translateY(0);
+  }
+  50%{
+    transform: rotateX(54deg) rotateY(16deg) rotateZ(-10deg) translateY(-14px);
+  }
+  100%{
+    transform: rotateX(60deg) rotateY(-20deg) rotateZ(8deg) translateY(0);
+  }
+}
+
+@keyframes prism-float-b{
+  0%{
+    transform: rotateX(64deg) rotateY(24deg) rotateZ(-6deg) translateY(0);
+  }
+  50%{
+    transform: rotateX(58deg) rotateY(-16deg) rotateZ(12deg) translateY(-18px);
+  }
+  100%{
+    transform: rotateX(64deg) rotateY(24deg) rotateZ(-6deg) translateY(0);
+  }
+}
+
+@keyframes prism-float-c{
+  0%{
+    transform: rotateX(58deg) rotateY(-26deg) rotateZ(12deg) translateY(0);
+  }
+  50%{
+    transform: rotateX(52deg) rotateY(18deg) rotateZ(-8deg) translateY(-12px);
+  }
+  100%{
+    transform: rotateX(58deg) rotateY(-26deg) rotateZ(12deg) translateY(0);
+  }
+}
+
+@media (max-width: 991.98px){
+  .bg-prisms{
+    opacity: calc(.1 + var(--fx-intensity) * .32);
+  }
+
+  .prism-wrap-c{
+    display: none;
+  }
 }
 
 .bg-nebula{

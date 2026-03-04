@@ -250,6 +250,17 @@ export default function App() {
       </div>
       <div className="bg-space" aria-hidden="true">
         <div className="bg-nebula"></div>
+        <div className="bg-prisms">
+          <div className="prism-wrap prism-wrap-a">
+            <span className="prism prism-a"></span>
+          </div>
+          <div className="prism-wrap prism-wrap-b">
+            <span className="prism prism-b"></span>
+          </div>
+          <div className="prism-wrap prism-wrap-c">
+            <span className="prism prism-c"></span>
+          </div>
+        </div>
         <div className="bg-stars bg-stars-far"></div>
         <div className="bg-stars bg-stars-mid"></div>
         <div className="bg-stars bg-stars-near"></div>
