@@ -154,7 +154,7 @@ export default function App() {
     if (!supportsFinePointer.matches || prefersReducedMotion.matches) return;
 
     const tiltSelector =
-      ".project-card, .path-card, .cert-card2, .stack-item, .contact-card";
+      ".project-card, .path-card, .cert-card2, .stack-item, .contact-card, .about-3d-card";
     let activeCard = null;
     let rafId = 0;
     let lastClientX = 0;

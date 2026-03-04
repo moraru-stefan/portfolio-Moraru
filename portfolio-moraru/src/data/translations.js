@@ -39,7 +39,7 @@ export const SITE_TEXT = {
         title: "Chi sono",
         description:
           "Sono uno sviluppatore web junior con competenze full-stack e un forte orientamento al front-end. Ho completato un corso intensivo di oltre 600 ore come Full-Stack Web Developer con Boolean, durante il quale ho realizzato diversi progetti concreti. Lavoro con React, HTML, CSS e JavaScript per il front-end, e Node.js, Express e MySQL per il back-end.",
-        tech: ["React", "Node.js", "Express", "MySQL"],
+        tech: ["Javascript", "React", "Node.js", "Express", "MySQL"],
       },
       path: {
         title: "Il mio percorso",
@@ -163,7 +163,7 @@ export const SITE_TEXT = {
         title: "About me",
         description:
           "I am a junior web developer with full-stack skills and a strong front-end focus. I completed an intensive 600+ hour Full-Stack Web Developer program at Boolean, where I built multiple real-world projects. I work with React, HTML, CSS, and JavaScript on the front end, and Node.js, Express, and MySQL on the back end.",
-        tech: ["React", "Node.js", "Express", "MySQL"],
+        tech: ["Javascript", "React", "Node.js", "Express", "MySQL"],
       },
       path: {
         title: "My Journey",
@@ -287,7 +287,7 @@ export const SITE_TEXT = {
         title: "Sobre mi",
         description:
           "Soy un desarrollador web junior con competencias full-stack y una fuerte orientacion al front-end. Complete un curso intensivo de mas de 600 horas como Full-Stack Web Developer en Boolean, donde realice varios proyectos reales. Trabajo con React, HTML, CSS y JavaScript para el front-end, y Node.js, Express y MySQL para el back-end.",
-        tech: ["React", "Node.js", "Express", "MySQL"],
+        tech: ["Javascript", "React", "Node.js", "Express", "MySQL"],
       },
       path: {
         title: "Mi recorrido",
@@ -411,7 +411,7 @@ export const SITE_TEXT = {
         title: "Despre mine",
         description:
           "Sunt dezvoltator web junior cu competente full-stack si focus puternic pe front-end. Am finalizat un curs intensiv de peste 600 de ore ca Full-Stack Web Developer la Boolean, unde am realizat mai multe proiecte reale. Lucrez cu React, HTML, CSS si JavaScript pe front-end, iar pe back-end cu Node.js, Express si MySQL.",
-        tech: ["React", "Node.js", "Express", "MySQL"],
+        tech: ["Javascript", "React", "Node.js", "Express", "MySQL"],
       },
       path: {
         title: "Parcursul meu",
