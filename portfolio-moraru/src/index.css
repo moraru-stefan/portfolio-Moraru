@@ -78,6 +78,60 @@ body::after{
   z-index: 1;
 }
 
+.scroll-beam{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 2000;
+  pointer-events: none;
+  background: rgba(148,163,184,.16);
+  backdrop-filter: blur(4px);
+}
+
+.scroll-beam-fill{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress));
+  background: linear-gradient(
+    90deg,
+    #7c3aed 0%,
+    #22d3ee 45%,
+    #a78bfa 100%
+  );
+  background-size: 180% 100%;
+  box-shadow:
+    0 0 14px rgba(124,58,237,.55),
+    0 0 24px rgba(34,211,238,.42);
+  animation: scroll-beam-pan 5s linear infinite;
+  will-change: transform;
+}
+
+.scroll-beam-fill::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 92px;
+  height: 14px;
+  transform: translate(35%, -50%);
+  background: radial-gradient(circle, rgba(255,255,255,.95), rgba(255,255,255,0) 70%);
+  filter: blur(4px);
+  opacity: calc(.46 + var(--fx-intensity) * .44);
+}
+
+@keyframes scroll-beam-pan{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 180% 0;
+  }
+}
+
 /* offset per navbar sticky */
 header[id],
 section[id],
@@ -1143,6 +1197,10 @@ footer a:hover {
   :root{
     --mouse-x: 0;
     --mouse-y: 0;
+  }
+
+  .scroll-beam-fill{
+    animation: none;
   }
 
   .reveal {

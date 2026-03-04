@@ -150,6 +150,9 @@ export default function App() {
 
   return (
     <>
+      <div className="scroll-beam" aria-hidden="true">
+        <div className="scroll-beam-fill"></div>
+      </div>
       <div className="bg-space" aria-hidden="true">
         <div className="bg-nebula"></div>
         <div className="bg-stars bg-stars-far"></div>
