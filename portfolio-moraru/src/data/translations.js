@@ -112,7 +112,7 @@ export const SITE_TEXT = {
           "Vuoi collaborare o hai domande? Compila il form oppure scrivimi via email.",
         send: "Invia",
         hint:
-          "*Dopo l'invio si aprira la tua email per confermare e spedire il messaggio.",
+          "*Dopo l'invio si aprirà la tua email per confermare e spedire il messaggio.",
         form: {
           name: "Nome",
           namePlaceholder: "Il tuo nome",
