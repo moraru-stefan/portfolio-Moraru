@@ -148,6 +148,101 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!supportsFinePointer.matches || prefersReducedMotion.matches) return;
+
+    const tiltSelector =
+      ".project-card, .path-card, .cert-card2, .stack-item, .contact-card";
+    let activeCard = null;
+    let rafId = 0;
+    let lastClientX = 0;
+    let lastClientY = 0;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const resetCard = (card) => {
+      card.classList.remove("is-tilting");
+      card.style.removeProperty("--tilt-rx");
+      card.style.removeProperty("--tilt-ry");
+      card.style.removeProperty("--tilt-glow-x");
+      card.style.removeProperty("--tilt-glow-y");
+      card.style.removeProperty("--tilt-lift");
+      card.style.removeProperty("--tilt-scale");
+    };
+
+    const updateCard = (card, clientX, clientY) => {
+      const rect = card.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const px = clamp((clientX - rect.left) / rect.width, 0, 1);
+      const py = clamp((clientY - rect.top) / rect.height, 0, 1);
+      const rotateX = (0.5 - py) * 9;
+      const rotateY = (px - 0.5) * 11;
+
+      card.style.setProperty("--tilt-rx", `${rotateX.toFixed(2)}deg`);
+      card.style.setProperty("--tilt-ry", `${rotateY.toFixed(2)}deg`);
+      card.style.setProperty("--tilt-glow-x", `${(px * 100).toFixed(2)}%`);
+      card.style.setProperty("--tilt-glow-y", `${(py * 100).toFixed(2)}%`);
+      card.style.setProperty("--tilt-lift", "6px");
+      card.style.setProperty("--tilt-scale", "1.012");
+    };
+
+    const flushTilt = () => {
+      rafId = 0;
+      if (!activeCard) return;
+      updateCard(activeCard, lastClientX, lastClientY);
+    };
+
+    const syncActiveCard = (eventTarget) => {
+      const source = eventTarget instanceof Element ? eventTarget : null;
+      const nextCard = source ? source.closest(tiltSelector) : null;
+      if (nextCard === activeCard) return;
+
+      if (activeCard) {
+        resetCard(activeCard);
+      }
+      activeCard = nextCard;
+      if (activeCard) {
+        activeCard.classList.add("is-tilting");
+      }
+    };
+
+    const onPointerMove = (e) => {
+      syncActiveCard(e.target);
+      if (!activeCard) return;
+
+      lastClientX = e.clientX;
+      lastClientY = e.clientY;
+      if (!rafId) {
+        rafId = window.requestAnimationFrame(flushTilt);
+      }
+    };
+
+    const clearActiveCard = () => {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      if (activeCard) {
+        resetCard(activeCard);
+        activeCard = null;
+      }
+    };
+
+    document.addEventListener("pointermove", onPointerMove, { passive: true });
+    document.addEventListener("pointerleave", clearActiveCard);
+    window.addEventListener("blur", clearActiveCard);
+
+    return () => {
+      document.removeEventListener("pointermove", onPointerMove);
+      document.removeEventListener("pointerleave", clearActiveCard);
+      window.removeEventListener("blur", clearActiveCard);
+      clearActiveCard();
+    };
+  }, []);
+
   return (
     <>
       <div className="scroll-beam" aria-hidden="true">

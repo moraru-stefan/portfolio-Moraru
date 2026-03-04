@@ -1809,3 +1809,51 @@ h1,h2,h3,h4,h5,h6{
 .badge *{
   color: inherit !important;
 }
+
+/* ===== Interactive 3D tilt cards ===== */
+:is(.project-card, .path-card, .cert-card2, .stack-item, .contact-card){
+  --tilt-rx: 0deg;
+  --tilt-ry: 0deg;
+  --tilt-glow-x: 50%;
+  --tilt-glow-y: 50%;
+  --tilt-lift: 0px;
+  --tilt-scale: 1;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition:
+    transform .34s cubic-bezier(.22,.61,.36,1),
+    box-shadow .34s ease,
+    border-color .34s ease,
+    filter .34s ease;
+}
+
+:is(.project-card, .path-card, .cert-card2, .stack-item, .contact-card).is-tilting{
+  transform:
+    perspective(1200px)
+    rotateX(var(--tilt-rx))
+    rotateY(var(--tilt-ry))
+    translateY(calc(var(--tilt-lift) * -1))
+    scale(var(--tilt-scale));
+  border-color: rgba(167,139,250,.36) !important;
+  filter: saturate(1.12) brightness(1.04);
+  box-shadow:
+    0 24px 48px rgba(2,6,23,.44),
+    0 0 0 1px rgba(167,139,250,.22),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.project-card.is-tilting::after{
+  opacity: 1;
+  background: radial-gradient(
+    560px circle at var(--tilt-glow-x) var(--tilt-glow-y),
+    rgba(124,58,237,.24),
+    rgba(34,211,238,.16) 36%,
+    transparent 64%
+  );
+}
+
+@media (prefers-reduced-motion: reduce){
+  :is(.project-card, .path-card, .cert-card2, .stack-item, .contact-card){
+    transition: none !important;
+  }
+}
