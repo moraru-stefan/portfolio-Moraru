@@ -442,7 +442,10 @@ export default function Homepage({ language, text }) {
                     // },
                   ].map((c) => (
                     <div className="col-12 col-md-6 col-lg-4" key={c.title}>
-                      <div className="cert-card2 rounded-4 border shadow-sm h-100 overflow-hidden">
+                      <div
+                        className="project-card cert-card2 rounded-4 border shadow-sm h-100 overflow-hidden"
+                        onMouseMove={setCardGlow}
+                      >
                         {/* immagine certificato */}
                         <a
                           href={c.file}
