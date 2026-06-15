@@ -1,5 +1,5 @@
 import { getProjectsData } from "../data/projects";
-import useReveal from "../hooks/useReveal";
+import useReveal, { useRevealItems } from "../hooks/useReveal";
 import { useEffect, useRef, useState } from "react";
 
 const BASE = import.meta.env.BASE_URL;
@@ -16,10 +16,12 @@ export default function Homepage({ language, text }) {
   const [heroRef, heroVisible] = useReveal();
   const [aboutRef, aboutVisible] = useReveal();
   const [projectsRef, projectsVisible] = useReveal();
+  const [projectItemRef, projectItemsVisible] = useRevealItems();
   const [contactRef, contactVisible] = useReveal();
   const [showcaseTab, setShowcaseTab] = useState("projects");
   const [tabAnim, setTabAnim] = useState(true);
   const [pathRef, pathVisible] = useReveal();
+  const [pathItemRef, pathItemsVisible] = useRevealItems();
   const [typedHeroText, setTypedHeroText] = useState("");
   const [typingDone, setTypingDone] = useState(false);
   const [showWave, setShowWave] = useState(false);
@@ -230,7 +232,10 @@ export default function Homepage({ language, text }) {
 
           <div className="path-timeline">
             {/* 2015 - 2020 */}
-            <article className="path-item">
+            <article
+              ref={pathItemRef(0)}
+              className={`path-item ${pathItemsVisible.has(0) ? "in-view" : ""}`}
+            >
               <div className="path-dot" aria-hidden="true"></div>
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
@@ -252,7 +257,10 @@ export default function Homepage({ language, text }) {
             </article>
 
             {/* 2021 - 2025 */}
-            <article className="path-item">
+            <article
+              ref={pathItemRef(1)}
+              className={`path-item ${pathItemsVisible.has(1) ? "in-view" : ""}`}
+            >
               <div className="path-dot" aria-hidden="true"></div>
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
@@ -288,7 +296,10 @@ export default function Homepage({ language, text }) {
             </article>
 
             {/* 2025 - 2026 */}
-            <article className="path-item">
+            <article
+              ref={pathItemRef(2)}
+              className={`path-item ${pathItemsVisible.has(2) ? "in-view" : ""}`}
+            >
               <div className="path-dot" aria-hidden="true"></div>
               <div className="path-card">
                 <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
@@ -370,10 +381,11 @@ export default function Homepage({ language, text }) {
             {showcaseTab === "projects" && (
               <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
                 <div className="projects-layout">
-                  {projectsData.map((p) => (
+                  {projectsData.map((p, i) => (
                     <article
                       key={p.title}
-                      className="project-card project-mini"
+                      ref={projectItemRef(i)}
+                      className={`project-card project-mini ${projectItemsVisible.has(i) ? "in-view" : ""}`}
                       onMouseMove={setCardGlow}
                     >
                       <img
