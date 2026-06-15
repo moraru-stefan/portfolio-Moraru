@@ -179,9 +179,6 @@ export default function Homepage({ language, text }) {
                 onPointerLeave={resetHeroGlow}
               >
                 <span className="hero-hover-glow" aria-hidden="true"></span>
-                <span className="hero-orbit" aria-hidden="true">
-                  <span className="hero-planet"></span>
-                </span>
                 <img
                   className="stefan-img img-fluid"
                   src={`${BASE}cv-image.png`}
