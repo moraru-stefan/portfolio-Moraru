@@ -256,7 +256,7 @@ export default function Homepage({ language, text }) {
               </div>
             </article>
 
-            {/* 2021 - 2025 */}
+            {/* Minuterie 3M 2021 - 2025 */}
             <article
               ref={pathItemRef(1)}
               className={`path-item ${pathItemsVisible.has(1) ? "in-view" : ""}`}
@@ -271,18 +271,9 @@ export default function Homepage({ language, text }) {
                 </div>
 
                 <h3 className="h5 mb-1">{path.work.title}</h3>
-                <p className="text-muted mb-3">{path.work.description}</p>
+                <p className="text-muted mb-2">{path.work.description}</p>
 
-                <h4 className="h6 text-uppercase text-muted mb-2">
-                  {path.work.listTitle}
-                </h4>
-                <ul className="path-list">
-                  {path.work.bullets.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-
-                <div className="d-flex flex-wrap gap-2 mt-3">
+                <div className="d-flex flex-wrap gap-2 mt-2">
                   {path.work.tags.map((s) => (
                     <span
                       key={s}
@@ -295,7 +286,7 @@ export default function Homepage({ language, text }) {
               </div>
             </article>
 
-            {/* 2025 - 2026 */}
+            {/* Boolean 2025 - 2026 */}
             <article
               ref={pathItemRef(2)}
               className={`path-item ${pathItemsVisible.has(2) ? "in-view" : ""}`}
@@ -314,6 +305,31 @@ export default function Homepage({ language, text }) {
 
                 <ul className="path-list">
                   {path.booleanCourse.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+
+            {/* Beaver Lab 2026 - presente */}
+            <article
+              ref={pathItemRef(3)}
+              className={`path-item ${pathItemsVisible.has(3) ? "in-view" : ""}`}
+            >
+              <div className="path-dot" aria-hidden="true"></div>
+              <div className="path-card">
+                <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                  <span className="badge text-bg-light border">
+                    {path.beaverLab.period}
+                  </span>
+                  <span className="text-muted small">{path.beaverLab.meta}</span>
+                </div>
+
+                <h3 className="h5 mb-1">{path.beaverLab.title}</h3>
+                <p className="text-muted mb-2">{path.beaverLab.description}</p>
+
+                <ul className="path-list">
+                  {path.beaverLab.bullets.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
