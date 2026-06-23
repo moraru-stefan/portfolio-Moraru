@@ -1,0 +1,22 @@
+:root {
+  --anchor-offset: 96px;
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --light-bg: transparent;
+  --text: #e5e7eb;
+  --muted: rgba(229,231,235,.70);
+
+  --radius: 14px;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  --bg-0: #07061a;
+  --bg-1: #0b0a24;
+  --violet: #7c3aed;
+  --violet-2: #a78bfa;
+  --cyan: #22d3ee;
+  --scroll-progress: 0;
+  --fx-intensity: 0;
+  --mouse-x: 0;
+  --mouse-y: 0;
+}

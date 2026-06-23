@@ -1,0 +1,55 @@
+.btn {
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #fff !important;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  border-color: rgba(255,255,255,.25) !important;
+  color: rgba(229,231,235,.92) !important;
+}
+
+.btn-outline-light:hover {
+  background: rgba(124,58,237,.22) !important;
+  border-color: rgba(124,58,237,.45) !important;
+  color: #fff !important;
+}
+
+/* badges */
+.badge {
+  color: rgba(229,231,235,.92) !important;
+}
+
+.badge * { color: inherit !important; }
+
+.badge.text-bg-light {
+  background: rgba(124,58,237,.12) !important;
+  border-color: rgba(124,58,237,.25) !important;
+  color: #e9d5ff !important;
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.badge.text-bg-light:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}

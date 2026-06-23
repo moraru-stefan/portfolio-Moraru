@@ -1,0 +1,51 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mouse-x: 0;
+    --mouse-y: 0;
+  }
+
+  .scroll-beam-fill { animation: none; }
+
+  .reveal,
+  .project-mini,
+  .path-item {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .about-3d-card { transition: none; transform: none; }
+  .about-3d-content { transition: none; transform: none; }
+
+  body::after { transform: none; }
+
+  .bg-nebula,
+  .bg-stars,
+  .bg-shooting::before,
+  .bg-shooting::after {
+    animation: none;
+    transform: none;
+  }
+
+  .bg-prisms { display: none; }
+
+  .hero-photo-3d::before,
+  .hero-photo-3d::after {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-hover-glow { display: none; }
+}
