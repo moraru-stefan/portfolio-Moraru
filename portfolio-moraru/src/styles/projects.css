@@ -141,6 +141,22 @@
 
 .project-tags-mini { margin-top: auto; }
 
+/* placeholder cards */
+.project-placeholder-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(34,211,238,.08));
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.project-placeholder-icon {
+  font-size: 2.8rem;
+  opacity: .5;
+  filter: grayscale(40%);
+}
+
 /* showcase tabs */
 .showcase-tabs {
   padding: .3rem;

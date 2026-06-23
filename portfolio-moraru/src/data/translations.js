@@ -100,6 +100,8 @@ export const SITE_TEXT = {
         liveDemo: "Live Demo",
         code: "Codice",
         demo: "Demo",
+        placeholderTitle: "In fase di lavorazione",
+        placeholderDesc: "Questo progetto sarà disponibile a breve.",
       },
       certificates: {
         openLabel: "Apri",
@@ -224,6 +226,8 @@ export const SITE_TEXT = {
         liveDemo: "Live Demo",
         code: "Code",
         demo: "Demo",
+        placeholderTitle: "Work in progress",
+        placeholderDesc: "This project will be available soon.",
       },
       certificates: {
         openLabel: "Open",
@@ -348,6 +352,8 @@ export const SITE_TEXT = {
         liveDemo: "Demo en vivo",
         code: "Codigo",
         demo: "Demo",
+        placeholderTitle: "En construccion",
+        placeholderDesc: "Este proyecto estará disponible pronto.",
       },
       certificates: {
         openLabel: "Abrir",
@@ -472,6 +478,8 @@ export const SITE_TEXT = {
         liveDemo: "Demo live",
         code: "Cod",
         demo: "Demo",
+        placeholderTitle: "În lucru",
+        placeholderDesc: "Acest proiect va fi disponibil în curând.",
       },
       certificates: {
         openLabel: "Deschide",

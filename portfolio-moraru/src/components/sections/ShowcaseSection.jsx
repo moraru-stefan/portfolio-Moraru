@@ -1,12 +1,10 @@
 import { useState } from "react";
 import useReveal, { useRevealItems } from "../../hooks/useReveal";
-import { getProjectsData } from "../../data/projects";
 import { setCardGlow } from "../../utils/cardGlow";
 
 const BASE = import.meta.env.BASE_URL;
 
-export default function ShowcaseSection({ language, showcase, certificatesText }) {
-  const projectsData = getProjectsData(language);
+export default function ShowcaseSection({ showcase, certificatesText }) {
   const [projectsRef, projectsVisible] = useReveal();
   const [projectItemRef, projectItemsVisible] = useRevealItems();
   const [showcaseTab, setShowcaseTab] = useState("projects");
@@ -49,34 +47,19 @@ export default function ShowcaseSection({ language, showcase, certificatesText }
           {showcaseTab === "projects" && (
             <div className={`reveal ${tabAnim ? "is-visible" : ""}`}>
               <div className="projects-layout">
-                {projectsData.map((p, i) => (
+                {[0, 1, 2].map((i) => (
                   <article
-                    key={p.title}
+                    key={i}
                     ref={projectItemRef(i)}
-                    className={`project-card project-mini ${projectItemsVisible.has(i) ? "in-view" : ""}`}
+                    className={`project-card project-mini project-placeholder ${projectItemsVisible.has(i) ? "in-view" : ""}`}
                     onMouseMove={setCardGlow}
                   >
-                    <img
-                      src={p.image}
-                      className="project-thumb project-mini-thumb"
-                      alt={`Screenshot - ${p.title}`}
-                    />
-                    <div className="project-mini-body">
-                      <h3 className="h5 card-title mb-2">{p.title}</h3>
-                      <p className="text-muted small mb-3 project-mini-desc">{p.description}</p>
-                      <div className="project-tags project-tags-mini mb-3">
-                        {p.tech.slice(0, 4).map((t) => (
-                          <span key={t} className="project-tag">{t}</span>
-                        ))}
-                      </div>
-                      <div className="d-flex gap-2">
-                        <a href={p.demoUrl} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm w-50">
-                          {showcase.demo}
-                        </a>
-                        <a href={p.codeUrl} target="_blank" rel="noreferrer" className="btn btn-outline-primary btn-sm w-50">
-                          {showcase.code}
-                        </a>
-                      </div>
+                    <div className="project-placeholder-thumb">
+                      <span className="project-placeholder-icon" aria-hidden="true">🚧</span>
+                    </div>
+                    <div className="project-mini-body d-flex flex-column align-items-center justify-content-center text-center gap-2 py-3">
+                      <h3 className="h5 card-title mb-1">{showcase.placeholderTitle}</h3>
+                      <p className="text-muted small mb-0">{showcase.placeholderDesc}</p>
                     </div>
                   </article>
                 ))}

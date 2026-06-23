@@ -4,14 +4,13 @@ import PathSection from "../components/sections/PathSection";
 import ShowcaseSection from "../components/sections/ShowcaseSection";
 import ContactSection from "../components/sections/ContactSection";
 
-export default function Homepage({ language, text }) {
+export default function Homepage({ text }) {
   return (
     <>
       <HeroSection text={text} />
       <AboutSection about={text.about} />
       <PathSection path={text.path} />
       <ShowcaseSection
-        language={language}
         showcase={text.showcase}
         certificatesText={text.certificates}
       />

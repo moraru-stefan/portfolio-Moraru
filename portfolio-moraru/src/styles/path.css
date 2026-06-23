@@ -5,34 +5,14 @@
 }
 
 .path-timeline::before {
-  display: none;
-}
-
-/* per-item line segments — start/end exactly at each dot center */
-.path-item::before,
-.path-item::after {
   content: "";
   position: absolute;
-  left: -16px;
+  left: 10px;
+  top: 6px;
+  bottom: 6px;
   width: 2px;
-  border-radius: 99px;
   background: linear-gradient(180deg, rgba(167,139,250,.7), rgba(34,211,238,.4));
-  pointer-events: none;
-}
-
-.path-item::before {
-  top: 0;
-  height: 23px; /* dot top(14) + dot radius(9) */
-}
-
-.path-item::after {
-  top: 23px;
-  bottom: 0;
-}
-
-.path-item:first-child::before,
-.path-item:last-child::after {
-  display: none;
+  border-radius: 99px;
 }
 
 .path-item {
@@ -90,12 +70,12 @@
 @media (min-width: 992px) {
   .path-timeline { padding-left: 0; }
 
-  .path-timeline::before { display: none; }
-
-  .path-item::before,
-  .path-item::after {
+  .path-timeline::before {
     left: 50%;
+    top: 0;
+    bottom: 0;
     transform: translateX(-50%);
+    width: 2px;
     background: linear-gradient(
       180deg,
       rgba(167,139,250,.75),
@@ -104,9 +84,6 @@
       rgba(167,139,250,.65)
     );
   }
-
-  .path-item::before { height: 34px; /* dot top(24) + dot radius(10) */ }
-  .path-item::after  { top: 34px; }
 
   .path-item {
     grid-template-columns: minmax(0, 1fr) 84px minmax(0, 1fr);
