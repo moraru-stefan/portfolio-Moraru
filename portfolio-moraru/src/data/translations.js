@@ -77,10 +77,11 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Sviluppo di siti web e interfacce responsive in un ambiente di lavoro reale.",
+            "Sviluppo di siti web con WordPress e creazione di layout dinamici tramite ACF. Utilizzo di PHP per la gestione e personalizzazione dei contenuti. Collaborazione in team su progetti reali con sviluppo di interfacce web responsive.",
           bullets: [
             "WordPress + ACF per layout dinamici",
             "PHP per gestione e personalizzazione contenuti",
+            "Interfacce responsive in team su progetti reali",
             "MJML per template email responsive",
           ],
         },
@@ -200,10 +201,11 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardy · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Building websites and responsive interfaces in a real work environment.",
+            "Building websites with WordPress and dynamic layouts via ACF. Using PHP for content management and customization. Collaborating in a team on real projects with a focus on responsive web interfaces.",
           bullets: [
             "WordPress + ACF for dynamic layouts",
             "PHP for content management and customization",
+            "Responsive interfaces in team on real projects",
             "MJML for responsive email templates",
           ],
         },
@@ -323,10 +325,11 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Desarrollo de sitios web e interfaces responsive en un entorno de trabajo real.",
+            "Desarrollo de sitios web con WordPress y creacion de layouts dinamicos via ACF. Uso de PHP para la gestion y personalizacion de contenidos. Colaboracion en equipo en proyectos reales con interfaces web responsive.",
           bullets: [
             "WordPress + ACF para layouts dinamicos",
             "PHP para gestion y personalizacion de contenidos",
+            "Interfaces responsive en equipo en proyectos reales",
             "MJML para plantillas de email responsive",
           ],
         },
@@ -446,10 +449,11 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Dezvoltare de site-uri web si interfete responsive intr-un mediu de lucru real.",
+            "Dezvoltare de site-uri web cu WordPress si crearea de layouturi dinamice prin ACF. Utilizare PHP pentru gestionarea si personalizarea continutului. Colaborare in echipa pe proiecte reale cu interfete web responsive.",
           bullets: [
             "WordPress + ACF pentru layouturi dinamice",
             "PHP pentru gestionarea si personalizarea continutului",
+            "Interfete responsive in echipa pe proiecte reale",
             "MJML pentru template-uri de email responsive",
           ],
         },
