@@ -44,13 +44,14 @@ export const SITE_TEXT = {
       path: {
         title: "Il mio percorso",
         subtitle:
-          "Formazione ed esperienza: il mio percorso fino allo sviluppo web.",
+          "Un percorso costruito tra formazione tecnica, esperienza professionale e la svolta verso lo sviluppo web.",
         school: {
           period: "2015 • 2020",
           meta: "Lecco, Lombardia",
           title: "Istituto Superiore Statale 'P.A. Fiocchi'",
-          description: "Diploma Istituto Tecnico e Professionale",
-          bullets: ["Diploma conseguito", "Base tecnica e metodo di studio"],
+          description:
+            "Diploma di Istituto Tecnico e Professionale, primo passo verso un metodo di lavoro pratico e concreto.",
+          bullets: ["Diploma conseguito", "Approccio pratico alla risoluzione dei problemi"],
         },
         work: {
           period: "2021 • 2025",
@@ -58,18 +59,18 @@ export const SITE_TEXT = {
           title: "Tecnico Operativo",
           description:
             "Tre anni e mezzo in un ambiente lavorativo strutturato: teamwork, rispetto delle scadenze e problem solving quotidiano.",
-          tags: ["Teamwork", "Problem solving", "Adattabilita"],
+          bullets: ["Teamwork", "Problem solving", "Adattabilita"],
         },
         booleanCourse: {
           period: "Mag 2025 • Gen 2026",
           meta: "Da remoto · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Percorso intensivo full-time con sviluppo di progetti web individuali e di gruppo.",
+            "Percorso full-time di formazione da sviluppatore, con progetti individuali e di gruppo realizzati seguendo un workflow professionale.",
           bullets: [
-            "HTML, CSS, JavaScript, React",
-            "Git e GitHub per il versionamento",
-            "Lavoro su progetti reali in team",
+            "Sviluppo frontend con HTML, CSS, JavaScript e React",
+            "Versionamento del codice con Git e GitHub",
+            "Collaborazione in team su progetti reali",
           ],
         },
         beaverLab: {
@@ -77,12 +78,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Sviluppo di siti web con WordPress e creazione di layout dinamici tramite ACF. Utilizzo di PHP per la gestione e personalizzazione dei contenuti. Collaborazione in team su progetti reali con sviluppo di interfacce web responsive.",
+            "Sviluppo siti web professionali con WordPress, creando layout dinamici tramite ACF e gestendo i contenuti con PHP. Collaboro in team su progetti reali, curando interfacce responsive e template email con MJML.",
           bullets: [
-            "WordPress + ACF per layout dinamici",
-            "PHP per gestione e personalizzazione contenuti",
-            "Interfacce responsive in team su progetti reali",
-            "MJML per template email responsive",
+            "WordPress e ACF per layout dinamici",
+            "PHP per gestione e personalizzazione dei contenuti",
+            "Layout responsive ottimizzati per ogni dispositivo",
+            "MJML per template email professionali",
           ],
         },
       },
@@ -170,13 +171,14 @@ export const SITE_TEXT = {
       path: {
         title: "My Journey",
         subtitle:
-          "Education and experience: my path into web development.",
+          "A path built on technical training, professional experience, and the shift toward web development.",
         school: {
           period: "2015 • 2020",
           meta: "Lecco, Lombardy",
           title: "State High School 'P.A. Fiocchi'",
-          description: "Technical and Vocational High School Diploma",
-          bullets: ["Diploma obtained", "Technical foundation and study method"],
+          description:
+            "Technical and Vocational High School Diploma, the first step toward a practical, hands-on way of working.",
+          bullets: ["Diploma obtained", "Early grounding in logic and problem solving"],
         },
         work: {
           period: "2021 • 2025",
@@ -184,18 +186,18 @@ export const SITE_TEXT = {
           title: "Operations Technician",
           description:
             "Three and a half years in a structured work environment: teamwork, meeting deadlines, and daily problem solving.",
-          tags: ["Teamwork", "Problem solving", "Adaptability"],
+          bullets: ["Teamwork", "Problem solving", "Adaptability"],
         },
         booleanCourse: {
           period: "May 2025 • Jan 2026",
           meta: "Remote · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Intensive full-time program building web projects individually and in teams.",
+            "Full-time developer training program, with individual and team projects built following a professional workflow.",
           bullets: [
-            "HTML, CSS, JavaScript, React",
-            "Git & GitHub for version control",
-            "Real projects + teamwork",
+            "Frontend development with HTML, CSS, JavaScript and React",
+            "Code versioning with Git and GitHub",
+            "Team collaboration on real projects",
           ],
         },
         beaverLab: {
@@ -203,12 +205,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardy · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Building websites with WordPress and dynamic layouts via ACF. Using PHP for content management and customization. Collaborating in a team on real projects with a focus on responsive web interfaces.",
+            "Building professional websites with WordPress, creating dynamic layouts via ACF and managing content with PHP. Collaborating in a team on real projects, crafting responsive interfaces and email templates with MJML.",
           bullets: [
-            "WordPress + ACF for dynamic layouts",
+            "WordPress and ACF for dynamic layouts",
             "PHP for content management and customization",
-            "Responsive interfaces in team on real projects",
-            "MJML for responsive email templates",
+            "Responsive layouts optimized for every device",
+            "MJML for professional email templates",
           ],
         },
       },
@@ -296,13 +298,14 @@ export const SITE_TEXT = {
       path: {
         title: "Mi recorrido",
         subtitle:
-          "Formacion y experiencia: mi camino hasta el desarrollo web.",
+          "Un recorrido construido entre formacion tecnica, experiencia profesional y el giro hacia el desarrollo web.",
         school: {
           period: "2015 • 2020",
           meta: "Lecco, Lombardia",
           title: "Instituto Estatal 'P.A. Fiocchi'",
-          description: "Diploma tecnico y profesional",
-          bullets: ["Diploma obtenido", "Base tecnica y metodo de estudio"],
+          description:
+            "Diploma tecnico y profesional, primer paso hacia un metodo de trabajo practico y concreto.",
+          bullets: ["Diploma obtenido", "Primeras bases de logica y resolucion de problemas"],
         },
         work: {
           period: "2021 • 2025",
@@ -310,18 +313,18 @@ export const SITE_TEXT = {
           title: "Tecnico Operativo",
           description:
             "Tres anos y medio en un entorno laboral estructurado: trabajo en equipo, cumplimiento de plazos y resolucion de problemas diarios.",
-          tags: ["Trabajo en equipo", "Resolucion de problemas", "Adaptabilidad"],
+          bullets: ["Trabajo en equipo", "Resolucion de problemas", "Adaptabilidad"],
         },
         booleanCourse: {
           period: "May 2025 • Ene 2026",
           meta: "Remoto · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Programa intensivo a tiempo completo con desarrollo de proyectos web individuales y en equipo.",
+            "Programa full-time de formacion como desarrollador, con proyectos individuales y en equipo desarrollados siguiendo un flujo de trabajo profesional.",
           bullets: [
-            "HTML, CSS, JavaScript, React",
-            "Git y GitHub para el control de versiones",
-            "Proyectos reales + trabajo en equipo",
+            "Desarrollo frontend con HTML, CSS, JavaScript y React",
+            "Control de versiones con Git y GitHub",
+            "Colaboracion en equipo en proyectos reales",
           ],
         },
         beaverLab: {
@@ -329,12 +332,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Desarrollo de sitios web con WordPress y creacion de layouts dinamicos via ACF. Uso de PHP para la gestion y personalizacion de contenidos. Colaboracion en equipo en proyectos reales con interfaces web responsive.",
+            "Desarrollo de sitios web profesionales con WordPress, creando layouts dinamicos mediante ACF y gestionando contenidos con PHP. Colaboro en equipo en proyectos reales, cuidando interfaces responsive y plantillas de email con MJML.",
           bullets: [
-            "WordPress + ACF para layouts dinamicos",
+            "WordPress y ACF para layouts dinamicos",
             "PHP para gestion y personalizacion de contenidos",
-            "Interfaces responsive en equipo en proyectos reales",
-            "MJML para plantillas de email responsive",
+            "Layouts responsive optimizados para cada dispositivo",
+            "MJML para plantillas de email profesionales",
           ],
         },
       },
@@ -422,13 +425,14 @@ export const SITE_TEXT = {
       path: {
         title: "Parcursul meu",
         subtitle:
-          "Educatie si experienta: drumul meu catre dezvoltarea web.",
+          "Un parcurs construit din formare tehnica, experienta profesionala si trecerea catre dezvoltarea web.",
         school: {
           period: "2015 • 2020",
           meta: "Lecco, Lombardia",
           title: "Liceul de Stat 'P.A. Fiocchi'",
-          description: "Diploma tehnica si profesionala",
-          bullets: ["Diploma obtinuta", "Baza tehnica si metoda de studiu"],
+          description:
+            "Diploma tehnica si profesionala, primul pas catre o metoda de lucru practica si concreta.",
+          bullets: ["Diploma obtinuta", "Primele baze de logica si rezolvare de probleme"],
         },
         work: {
           period: "2021 • 2025",
@@ -436,18 +440,18 @@ export const SITE_TEXT = {
           title: "Tehnician Operational",
           description:
             "Trei ani si jumatate intr-un mediu de lucru structurat: teamwork, respectarea termenelor si rezolvare de probleme zilnica.",
-          tags: ["Teamwork", "Rezolvare de probleme", "Adaptabilitate"],
+          bullets: ["Teamwork", "Rezolvare de probleme", "Adaptabilitate"],
         },
         booleanCourse: {
           period: "Mai 2025 • Ian 2026",
           meta: "Remote · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Program intensiv full-time cu dezvoltare de proiecte web individuale si in echipa.",
+            "Program full-time de formare ca dezvoltator, cu proiecte individuale si in echipa realizate urmand un flux de lucru profesional.",
           bullets: [
-            "HTML, CSS, JavaScript, React",
-            "Git si GitHub pentru versionare",
-            "Proiecte reale + lucru in echipa",
+            "Dezvoltare frontend cu HTML, CSS, JavaScript si React",
+            "Versionare a codului cu Git si GitHub",
+            "Colaborare in echipa pe proiecte reale",
           ],
         },
         beaverLab: {
@@ -455,12 +459,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Dezvoltare de site-uri web cu WordPress si crearea de layouturi dinamice prin ACF. Utilizare PHP pentru gestionarea si personalizarea continutului. Colaborare in echipa pe proiecte reale cu interfete web responsive.",
+            "Dezvoltare de site-uri web profesionale cu WordPress, crearea de layouturi dinamice prin ACF si gestionarea continutului cu PHP. Colaborez in echipa pe proiecte reale, ingrijind interfete responsive si template-uri de email cu MJML.",
           bullets: [
-            "WordPress + ACF pentru layouturi dinamice",
+            "WordPress si ACF pentru layouturi dinamice",
             "PHP pentru gestionarea si personalizarea continutului",
-            "Interfete responsive in echipa pe proiecte reale",
-            "MJML pentru template-uri de email responsive",
+            "Layouturi responsive optimizate pentru fiecare dispozitiv",
+            "MJML pentru template-uri de email profesionale",
           ],
         },
       },

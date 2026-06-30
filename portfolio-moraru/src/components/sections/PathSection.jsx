@@ -52,11 +52,11 @@ export default function PathSection({ path }) {
               </div>
               <h3 className="h5 mb-1">{path.work.title}</h3>
               <p className="text-muted mb-2">{path.work.description}</p>
-              <div className="d-flex flex-wrap gap-2 mt-2">
-                {path.work.tags.map((s) => (
-                  <span key={s} className="badge rounded-pill text-bg-light border">{s}</span>
+              <ul className="path-list">
+                {path.work.bullets.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           </article>
 
