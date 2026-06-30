@@ -31,11 +31,6 @@
 
   body::after { transform: none; }
 
-  .bg-stars {
-    animation: none;
-    transform: none;
-  }
-
   .hero-photo-3d::before,
   .hero-photo-3d::after {
     animation: none;

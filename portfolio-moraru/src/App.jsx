@@ -248,11 +248,6 @@ export default function App() {
       <div className="scroll-beam" aria-hidden="true">
         <div className="scroll-beam-fill"></div>
       </div>
-      <div className="bg-space" aria-hidden="true">
-        <div className="bg-stars bg-stars-far"></div>
-        <div className="bg-stars bg-stars-mid"></div>
-        <div className="bg-stars bg-stars-near"></div>
-      </div>
       <Header
         language={language}
         onLanguageChange={setLanguage}
