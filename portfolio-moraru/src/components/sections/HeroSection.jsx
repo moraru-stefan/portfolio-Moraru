@@ -115,7 +115,7 @@ export default function HeroSection({ text }) {
               <span className="hero-hover-glow" aria-hidden="true"></span>
               <img
                 className="stefan-img img-fluid"
-                src={`${BASE}cv-image.png`}
+                src={`${BASE}cv-image.webp`}
                 alt={text.portraitAlt}
               />
             </div>

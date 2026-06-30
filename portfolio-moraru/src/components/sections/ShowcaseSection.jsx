@@ -74,7 +74,7 @@ export default function ShowcaseSection({ showcase, certificatesText }) {
                   {
                     title: "Boolean • Full-Stack Web Developer",
                     year: "2026",
-                    img: `${BASE}Boolean-img.png`,
+                    img: `${BASE}Boolean-img.webp`,
                     file: `${BASE}Certificato-Boolean.pdf`,
                   },
                 ].map((c) => (
