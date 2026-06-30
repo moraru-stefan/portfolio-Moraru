@@ -36,8 +36,6 @@
     transform: none;
   }
 
-  .bg-prisms { display: none; }
-
   .hero-photo-3d::before,
   .hero-photo-3d::after {
     animation: none;
