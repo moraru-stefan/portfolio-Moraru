@@ -6,7 +6,6 @@
   overflow: hidden;
 }
 
-.bg-nebula,
 .bg-prisms,
 .bg-stars,
 .bg-shooting {
@@ -146,21 +145,6 @@
   .prism-wrap-c { display: none; }
 }
 
-.bg-nebula {
-  background:
-    radial-gradient(38% 34% at 18% 24%, rgba(124,58,237,.32), transparent 72%),
-    radial-gradient(30% 28% at 76% 30%, rgba(34,211,238,.20), transparent 74%),
-    radial-gradient(34% 30% at 64% 72%, rgba(167,139,250,.22), transparent 72%),
-    radial-gradient(50% 44% at 52% 58%, rgba(124,58,237,.16), transparent 78%);
-  filter: blur(10px) saturate(118%);
-  opacity: calc(.34 + var(--fx-intensity) * .66);
-  transform:
-    translateX(calc(var(--mouse-x) * -42px))
-    translateY(calc(var(--scroll-progress) * -120px + var(--mouse-y) * -36px))
-    scale(calc(1.01 + var(--fx-intensity) * .32));
-  animation: nebula-pulse 20s ease-in-out infinite alternate;
-}
-
 .bg-stars {
   background-repeat: repeat;
   transform:
@@ -232,11 +216,6 @@
   top: 58%;
   left: 64%;
   animation: shooting-star 17s linear infinite 5s;
-}
-
-@keyframes nebula-pulse {
-  0%   { filter: blur(9px) saturate(112%); }
-  100% { filter: blur(14px) saturate(126%); }
 }
 
 @keyframes stars-far-drift {

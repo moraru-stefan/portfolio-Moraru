@@ -31,7 +31,6 @@
 
   body::after { transform: none; }
 
-  .bg-nebula,
   .bg-stars,
   .bg-shooting::before,
   .bg-shooting::after {

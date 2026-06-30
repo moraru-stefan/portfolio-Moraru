@@ -249,7 +249,6 @@ export default function App() {
         <div className="scroll-beam-fill"></div>
       </div>
       <div className="bg-space" aria-hidden="true">
-        <div className="bg-nebula"></div>
         <div className="bg-prisms">
           <div className="prism-wrap prism-wrap-a">
             <span className="prism prism-a"></span>
