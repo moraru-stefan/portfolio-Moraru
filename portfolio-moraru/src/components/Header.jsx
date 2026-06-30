@@ -105,77 +105,79 @@ export default function Header({ language, onLanguageChange, text }) {
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top main-nav">
-      <div className="container nav-shell">
-        <a
-          className="nav-brand"
-          href="#home"
-          onClick={() => setIsOpen(false)}
-        >
-          <span className="nav-brand-mark" aria-hidden="true">
-            <i className="fa-solid fa-code"></i>
-          </span>
-          <span className="nav-brand-text">
-            <span className="nav-brand-title">Moraru Stefan</span>
-            <span className="nav-brand-sub">{text.brandRole}</span>
-          </span>
-        </a>
+      <div className="nav-shell">
+        <div className="container nav-shell-inner">
+          <a
+            className="nav-brand"
+            href="#home"
+            onClick={() => setIsOpen(false)}
+          >
+            <span className="nav-brand-mark" aria-hidden="true">
+              <i className="fa-solid fa-code"></i>
+            </span>
+            <span className="nav-brand-text">
+              <span className="nav-brand-title">Moraru Stefan</span>
+              <span className="nav-brand-sub">{text.brandRole}</span>
+            </span>
+          </a>
 
-        {renderLanguageMenu("lang-switch-desktop")}
+          {renderLanguageMenu("lang-switch-desktop")}
 
-        <button
-          className={`navbar-toggler border-0 nav-toggle ${isOpen ? "open" : ""}`}
-          type="button"
-          onClick={toggleNavbar}
-          aria-expanded={isOpen}
-          aria-label={text.toggleNavigationLabel}
-        >
-          {isOpen ? (
-            <i className="fa-solid fa-xmark"></i>
-          ) : (
-            <i className="fa-solid fa-bars"></i>
-          )}
-        </button>
+          <button
+            className={`navbar-toggler border-0 nav-toggle ${isOpen ? "open" : ""}`}
+            type="button"
+            onClick={toggleNavbar}
+            aria-expanded={isOpen}
+            aria-label={text.toggleNavigationLabel}
+          >
+            {isOpen ? (
+              <i className="fa-solid fa-xmark"></i>
+            ) : (
+              <i className="fa-solid fa-bars"></i>
+            )}
+          </button>
 
-        <div
-          className={`collapse navbar-collapse nav-collapse ${isOpen ? "show" : ""}`}
-          id="nav"
-        >
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-menu">
-            <li className="nav-item">
-              <a
-                className={`nav-link nav-pill ${active === "about" ? "active" : ""}`}
-                href="#about"
-                onClick={() => setIsOpen(false)}
-              >
-                <i className="fa-regular fa-user"></i>
-                {text.nav.about}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className={`nav-link nav-pill ${active === "projects" ? "active" : ""}`}
-                href="#projects"
-                onClick={() => setIsOpen(false)}
-              >
-                <i className="fa-solid fa-layer-group"></i>
-                {text.nav.projects}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className={`nav-link nav-pill ${active === "contact" ? "active" : ""}`}
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-              >
-                <i className="fa-regular fa-envelope"></i>
-                {text.nav.contact}
-              </a>
-            </li>
-            <li className="nav-item nav-lang-item">
-              <span className="nav-lang-label">{text.languageLabel}</span>
-              {renderLanguageMenu("lang-switch-mobile")}
-            </li>
-          </ul>
+          <div
+            className={`collapse navbar-collapse nav-collapse ${isOpen ? "show" : ""}`}
+            id="nav"
+          >
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-menu">
+              <li className="nav-item">
+                <a
+                  className={`nav-link nav-pill ${active === "about" ? "active" : ""}`}
+                  href="#about"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <i className="fa-regular fa-user"></i>
+                  {text.nav.about}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className={`nav-link nav-pill ${active === "projects" ? "active" : ""}`}
+                  href="#projects"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <i className="fa-solid fa-layer-group"></i>
+                  {text.nav.projects}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className={`nav-link nav-pill ${active === "contact" ? "active" : ""}`}
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <i className="fa-regular fa-envelope"></i>
+                  {text.nav.contact}
+                </a>
+              </li>
+              <li className="nav-item nav-lang-item">
+                <span className="nav-lang-label">{text.languageLabel}</span>
+                {renderLanguageMenu("lang-switch-mobile")}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
