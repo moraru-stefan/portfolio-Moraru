@@ -1,18 +1,6 @@
 .path-timeline {
   position: relative;
   margin-top: 10px;
-  padding-left: 26px;
-}
-
-.path-timeline::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 6px;
-  bottom: 6px;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(167,139,250,.7), rgba(34,211,238,.4));
-  border-radius: 99px;
 }
 
 .path-item {
@@ -68,9 +56,9 @@
 }
 
 @media (min-width: 992px) {
-  .path-timeline { padding-left: 0; }
-
   .path-timeline::before {
+    content: "";
+    position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
