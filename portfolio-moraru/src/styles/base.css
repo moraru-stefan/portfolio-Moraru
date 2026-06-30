@@ -18,34 +18,52 @@ body {
   color: #e5e7eb;
 }
 
+/* aurora: soft drifting color wash, pure CSS (transform-only, no blur recalculation) */
 body::before {
+  content: "";
+  position: fixed;
+  inset: -15%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(36% 30% at 18% 20%, rgba(124,58,237,.22), transparent 70%),
+    radial-gradient(32% 28% at 84% 14%, rgba(34,211,238,.16), transparent 70%),
+    radial-gradient(38% 32% at 56% 92%, rgba(167,139,250,.15), transparent 72%);
+  animation: aurora-drift 48s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-2.5%, 2.5%, 0) scale(1.06); }
+}
+
+/* spotlight that follows the cursor/scroll — subtle, no blur filter */
+body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: calc(.28 + var(--fx-intensity) * .34);
+  opacity: calc(.22 + var(--fx-intensity) * .26);
   background: radial-gradient(
-    1200px circle at calc(50% + var(--mouse-x) * 10%) calc(18% + var(--scroll-progress) * 24% + var(--mouse-y) * 7%),
-    rgba(255,255,255,.08),
-    rgba(255,255,255,.03) 34%,
+    640px circle at calc(50% + var(--mouse-x) * 14%) calc(26% + var(--scroll-progress) * 20% + var(--mouse-y) * 9%),
+    rgba(255,255,255,.10),
+    rgba(167,139,250,.05) 40%,
     transparent 72%
   );
 }
 
-body::after {
-  content: "";
+/* fine grain — static, near-zero cost, gives the gradients a premium, non-flat finish */
+.bg-grain {
   position: fixed;
-  inset: -20%;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(124,58,237,.10), transparent 60%);
-  filter: blur(40px);
-  opacity: calc(.34 + var(--fx-intensity) * .54);
-  transform:
-    translateX(calc(var(--mouse-x) * -48px))
-    translateY(calc(var(--scroll-progress) * -120px + var(--mouse-y) * -34px))
-    scale(calc(1 + var(--fx-intensity) * .24));
+  pointer-events: none;
+  opacity: .035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
 
 #root, main, header, section, footer {

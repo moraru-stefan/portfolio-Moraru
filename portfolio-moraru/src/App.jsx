@@ -248,6 +248,7 @@ export default function App() {
       <div className="scroll-beam" aria-hidden="true">
         <div className="scroll-beam-fill"></div>
       </div>
+      <div className="bg-grain" aria-hidden="true"></div>
       <Header
         language={language}
         onLanguageChange={setLanguage}
