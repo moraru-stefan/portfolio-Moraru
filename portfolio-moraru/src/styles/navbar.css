@@ -75,6 +75,7 @@
 
 .nav-brand-text {
   display: grid;
+  gap: 0.5rem;
   line-height: 1.1;
 }
 

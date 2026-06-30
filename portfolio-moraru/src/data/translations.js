@@ -8,7 +8,7 @@ export const LANGUAGE_OPTIONS = [
 export const SITE_TEXT = {
   it: {
     header: {
-      brandRole: "Full-Stack Developer",
+      brandRole: "Junior Web Developer",
       toggleNavigationLabel: "Apri o chiudi menu",
       nav: {
         about: "Chi sono",
@@ -28,7 +28,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Ciao, sono Moraru Stefan",
       greetingPrefix: "Ciao, sono ",
-      role: "Junior Full-Stack Web Developer",
+      role: "Junior Web Developer",
       heroLead:
         "Creo interfacce web moderne, responsive e intuitive, con grande attenzione all'esperienza utente.",
       ctaProjects: "Guarda i progetti",
@@ -135,7 +135,7 @@ export const SITE_TEXT = {
   },
   en: {
     header: {
-      brandRole: "Full-Stack Developer",
+      brandRole: "Junior Web Developer",
       toggleNavigationLabel: "Open or close navigation",
       nav: {
         about: "About",
@@ -155,7 +155,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hi, I'm Moraru Stefan",
       greetingPrefix: "Hi, I'm ",
-      role: "Junior Full-Stack Web Developer",
+      role: "Junior Web Developer",
       heroLead:
         "I build modern, responsive, and intuitive web interfaces, with strong attention to user experience.",
       ctaProjects: "View projects",
@@ -262,7 +262,7 @@ export const SITE_TEXT = {
   },
   es: {
     header: {
-      brandRole: "Desarrollador Full-Stack",
+      brandRole: "Desarrollador Web Junior",
       toggleNavigationLabel: "Abrir o cerrar navegacion",
       nav: {
         about: "Sobre mi",
@@ -282,7 +282,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hola, soy Moraru Stefan",
       greetingPrefix: "Hola, soy ",
-      role: "Desarrollador Web Full-Stack Junior",
+      role: "Desarrollador Web Junior",
       heroLead:
         "Creo interfaces web modernas, responsive e intuitivas, con gran atencion a la experiencia de usuario.",
       ctaProjects: "Ver proyectos",
@@ -389,7 +389,7 @@ export const SITE_TEXT = {
   },
   ro: {
     header: {
-      brandRole: "Dezvoltator Full-Stack",
+      brandRole: "Dezvoltator Web Junior",
       toggleNavigationLabel: "Deschide sau inchide meniul",
       nav: {
         about: "Despre mine",
@@ -409,7 +409,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Salut, sunt Moraru Stefan",
       greetingPrefix: "Salut, sunt ",
-      role: "Dezvoltator Web Full-Stack Junior",
+      role: "Dezvoltator Web Junior",
       heroLead:
         "Construiesc interfete web moderne, responsive si intuitive, cu atentie puternica la experienta utilizatorului.",
       ctaProjects: "Vezi proiectele",
