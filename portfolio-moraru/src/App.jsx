@@ -263,7 +263,6 @@ export default function App() {
         <div className="bg-stars bg-stars-far"></div>
         <div className="bg-stars bg-stars-mid"></div>
         <div className="bg-stars bg-stars-near"></div>
-        <div className="bg-shooting"></div>
       </div>
       <Header
         language={language}

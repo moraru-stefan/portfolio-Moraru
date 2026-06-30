@@ -31,9 +31,7 @@
 
   body::after { transform: none; }
 
-  .bg-stars,
-  .bg-shooting::before,
-  .bg-shooting::after {
+  .bg-stars {
     animation: none;
     transform: none;
   }

@@ -7,8 +7,7 @@
 }
 
 .bg-prisms,
-.bg-stars,
-.bg-shooting {
+.bg-stars {
   position: absolute;
   inset: 0;
 }
@@ -194,30 +193,6 @@
   animation: stars-near-drift 62s linear infinite;
 }
 
-.bg-shooting::before,
-.bg-shooting::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
-  filter: blur(.4px);
-  opacity: calc(.14 + var(--fx-intensity) * .56);
-  transform: rotate(-28deg) translateX(-220px);
-}
-
-.bg-shooting::before {
-  top: 18%;
-  left: 12%;
-  animation: shooting-star 13s linear infinite;
-}
-
-.bg-shooting::after {
-  top: 58%;
-  left: 64%;
-  animation: shooting-star 17s linear infinite 5s;
-}
-
 @keyframes stars-far-drift {
   from { background-position: 0 0, 50px 90px; }
   to   { background-position: -440px 320px, -240px 420px; }
@@ -231,13 +206,6 @@
 @keyframes stars-near-drift {
   from { background-position: 0 0, 32px 22px, 84px 68px; }
   to   { background-position: -820px 560px, -410px 380px, -260px 320px; }
-}
-
-@keyframes shooting-star {
-  0%   { transform: rotate(-28deg) translateX(-220px); opacity: 0; }
-  8%   { opacity: .7; }
-  28%  { transform: rotate(-28deg) translateX(520px); opacity: 0; }
-  100% { transform: rotate(-28deg) translateX(520px); opacity: 0; }
 }
 
 /* 3D tilt cards */
