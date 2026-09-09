@@ -67,14 +67,28 @@ export default function ShowcaseSection({ showcase, certificatesText }) {
                           <span key={t} className="project-tag">{t}</span>
                         ))}
                       </div>
-                      <a
-                        href={p.demoUrl || p.codeUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-primary btn-sm w-100"
-                      >
-                        {p.demoUrl ? showcase.demo : showcase.code}
-                      </a>
+                      <div className="d-flex gap-2">
+                        {p.demoUrl && (
+                          <a
+                            href={p.demoUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-primary btn-sm flex-fill"
+                          >
+                            {showcase.demo}
+                          </a>
+                        )}
+                        {p.codeUrl && (
+                          <a
+                            href={p.codeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`btn btn-sm flex-fill ${p.demoUrl ? "btn-outline-primary" : "btn-primary"}`}
+                          >
+                            {showcase.code}
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </article>
                 ))}

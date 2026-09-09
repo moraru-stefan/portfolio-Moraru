@@ -105,12 +105,13 @@ export const SITE_TEXT = {
         placeholderDesc: "Questo progetto sarà disponibile a breve.",
         projects: [
           {
-            title: "BookTrack",
+            title: "BaniWise",
             description:
-              "Applicazione per tenere traccia dei libri letti, con un'interfaccia React curata nei dettagli: ricerca libri, gestione della libreria personale, stato di lettura, voti, recensioni e statistiche personalizzate. Il frontend è supportato da un backend Node.js/Express con MySQL e autenticazione JWT.",
-            tech: ["React", "TypeScript", "Node.js", "Express", "MySQL"],
-            image: "book-track.png",
-            codeUrl: "https://github.com/moraru-stefan/BookTrack",
+              "App per la gestione delle finanze personali: traccia entrate e spese, imposta obiettivi di risparmio e consulta un calendario con le spese di ogni giorno. Include anche un convertitore di valuta in tempo reale.",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+            image: "home-baniwise.jpg",
+            demoUrl: "https://bani-wise.vercel.app/",
+            codeUrl: "https://github.com/moraru-stefan/BaniWise",
           },
           {
             title: "Garavaglia Auto",
@@ -258,12 +259,13 @@ export const SITE_TEXT = {
         placeholderDesc: "This project will be available soon.",
         projects: [
           {
-            title: "BookTrack",
+            title: "BaniWise",
             description:
-              "App for tracking books you've read, with a carefully crafted React interface: book search, personal library management, reading status, ratings, reviews, and personalized statistics. The frontend is backed by a Node.js/Express backend with MySQL and JWT authentication.",
-            tech: ["React", "TypeScript", "Node.js", "Express", "MySQL"],
-            image: "book-track.png",
-            codeUrl: "https://github.com/moraru-stefan/BookTrack",
+              "A personal finance app to track income and expenses, set savings goals, and check a calendar with your daily spending. It also includes a live currency converter.",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+            image: "home-baniwise.jpg",
+            demoUrl: "https://bani-wise.vercel.app/",
+            codeUrl: "https://github.com/moraru-stefan/BaniWise",
           },
           {
             title: "Garavaglia Auto",
@@ -411,12 +413,13 @@ export const SITE_TEXT = {
         placeholderDesc: "Este proyecto estará disponible pronto.",
         projects: [
           {
-            title: "BookTrack",
+            title: "BaniWise",
             description:
-              "Aplicacion para llevar el registro de los libros leidos, con una interfaz en React cuidada al detalle: busqueda de libros, gestion de la biblioteca personal, estado de lectura, valoraciones, resenas y estadisticas personalizadas. El frontend esta respaldado por un backend Node.js/Express con MySQL y autenticacion JWT.",
-            tech: ["React", "TypeScript", "Node.js", "Express", "MySQL"],
-            image: "book-track.png",
-            codeUrl: "https://github.com/moraru-stefan/BookTrack",
+              "Aplicacion de finanzas personales para registrar ingresos y gastos, fijar objetivos de ahorro y consultar un calendario con los gastos diarios. Incluye tambien un conversor de divisas en tiempo real.",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+            image: "home-baniwise.jpg",
+            demoUrl: "https://bani-wise.vercel.app/",
+            codeUrl: "https://github.com/moraru-stefan/BaniWise",
           },
           {
             title: "Garavaglia Auto",
@@ -564,12 +567,13 @@ export const SITE_TEXT = {
         placeholderDesc: "Acest proiect va fi disponibil în curând.",
         projects: [
           {
-            title: "BookTrack",
+            title: "BaniWise",
             description:
-              "Aplicatie pentru urmarirea cartilor citite, cu o interfata React lucrata in detaliu: cautare de carti, gestionarea bibliotecii personale, status de citire, evaluari, recenzii si statistici personalizate. Frontend-ul este sustinut de un backend Node.js/Express cu MySQL si autentificare JWT.",
-            tech: ["React", "TypeScript", "Node.js", "Express", "MySQL"],
-            image: "book-track.png",
-            codeUrl: "https://github.com/moraru-stefan/BookTrack",
+              "Aplicatie de finante personale pentru a inregistra venituri si cheltuieli, a stabili obiective de economisire si a consulta un calendar cu cheltuielile zilnice. Include si un convertor valutar in timp real.",
+            tech: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+            image: "home-baniwise.jpg",
+            demoUrl: "https://bani-wise.vercel.app/",
+            codeUrl: "https://github.com/moraru-stefan/BaniWise",
           },
           {
             title: "Garavaglia Auto",
