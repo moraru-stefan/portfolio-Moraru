@@ -8,7 +8,7 @@ export const LANGUAGE_OPTIONS = [
 export const SITE_TEXT = {
   it: {
     header: {
-      brandRole: "Junior Web Developer",
+      brandRole: "Junior Full Stack Developer",
       toggleNavigationLabel: "Apri o chiudi menu",
       nav: {
         home: "Home",
@@ -54,23 +54,22 @@ export const SITE_TEXT = {
             "Diploma di Istituto Tecnico e Professionale, con una formazione orientata alla pratica e alla risoluzione di problemi reali.",
         },
         work: {
-          period: "2021 • 2025",
+          period: "Ott 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico di produzione",
           description:
-            "Esperienza nel settore metalmeccanico con attività operative. Sviluppate competenze trasversali come lavoro in team, gestione del tempo e attenzione alla qualità.",
-          bullets: ["Teamwork", "Problem solving", "Adattabilità"],
+            "Esperienza nel settore metalmeccanico con attività operative.",
+          bullets: ["Lavoro in team", "Gestione del tempo", "Attenzione alla qualità"],
         },
         booleanCourse: {
           period: "Mag 2025 • Gen 2026",
           meta: "Da remoto · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Percorso full-time di formazione da sviluppatore, con progetti individuali e di gruppo realizzati seguendo un workflow professionale.",
+            "Percorso intensivo full-time con sviluppo di progetti web individuali e di gruppo.",
           bullets: [
-            "Sviluppo frontend con HTML, CSS, JavaScript e React",
+            "Sviluppo di progetti con HTML, CSS, JavaScript e React",
             "Versionamento del codice con Git e GitHub",
-            "Collaborazione in team su progetti reali",
           ],
         },
         beaverLab: {
@@ -78,12 +77,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Sviluppo siti web professionali con WordPress, creando layout dinamici tramite ACF e gestendo i contenuti con PHP. Collaboro in team su progetti reali, curando interfacce responsive e template email con MJML.",
+            "Sviluppo e personalizzazione di siti web in WordPress a partire dai design forniti, realizzando interfacce responsive e funzionali.",
           bullets: [
-            "WordPress e ACF per layout dinamici",
-            "PHP per gestione e personalizzazione dei contenuti",
-            "Layout responsive ottimizzati per ogni dispositivo",
-            "MJML per template email professionali",
+            "Creazione di layout e contenuti dinamici tramite ACF",
+            "Utilizzo di PHP per personalizzazioni e funzionalità custom",
+            "Collaborazione con il team di sviluppo su progetti per clienti reali",
+            "Sviluppo di template email professionali con MJML",
           ],
         },
       },
@@ -162,7 +161,7 @@ export const SITE_TEXT = {
   },
   en: {
     header: {
-      brandRole: "Junior Web Developer",
+      brandRole: "Junior Full Stack Developer",
       toggleNavigationLabel: "Open or close navigation",
       nav: {
         home: "Home",
@@ -208,23 +207,22 @@ export const SITE_TEXT = {
             "Technical and Vocational High School Diploma, with hands-on training focused on solving real-world problems.",
         },
         work: {
-          period: "2021 • 2025",
+          period: "Oct 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Production Technician",
           description:
-            "Experience in the metalworking industry with hands-on operations. I developed transversal skills such as teamwork, time management, and attention to quality.",
-          bullets: ["Teamwork", "Problem solving", "Adaptability"],
+            "Experience in the metalworking industry with hands-on operations.",
+          bullets: ["Teamwork", "Time management", "Attention to quality"],
         },
         booleanCourse: {
           period: "May 2025 • Jan 2026",
           meta: "Remote · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Full-time developer training program, with individual and team projects built following a professional workflow.",
+            "Full-time intensive program building individual and team web projects.",
           bullets: [
-            "Frontend development with HTML, CSS, JavaScript and React",
+            "Building projects with HTML, CSS, JavaScript and React",
             "Code versioning with Git and GitHub",
-            "Team collaboration on real projects",
           ],
         },
         beaverLab: {
@@ -232,12 +230,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardy · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Building professional websites with WordPress, creating dynamic layouts via ACF and managing content with PHP. Collaborating in a team on real projects, crafting responsive interfaces and email templates with MJML.",
+            "Building and customizing WordPress websites from provided designs, creating responsive and functional interfaces.",
           bullets: [
-            "WordPress and ACF for dynamic layouts",
-            "PHP for content management and customization",
-            "Responsive layouts optimized for every device",
-            "MJML for professional email templates",
+            "Dynamic layouts and content via ACF",
+            "PHP for custom functionality",
+            "Collaborating with the dev team on real client projects",
+            "Professional email templates with MJML",
           ],
         },
       },
@@ -316,7 +314,7 @@ export const SITE_TEXT = {
   },
   es: {
     header: {
-      brandRole: "Desarrollador Web Junior",
+      brandRole: "Desarrollador Full Stack Junior",
       toggleNavigationLabel: "Abrir o cerrar navegacion",
       nav: {
         home: "Inicio",
@@ -362,23 +360,22 @@ export const SITE_TEXT = {
             "Diploma tecnico y profesional, con una formacion orientada a la practica y a la resolucion de problemas reales.",
         },
         work: {
-          period: "2021 • 2025",
+          period: "Oct 2021 • Abr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico de produccion",
           description:
-            "Experiencia en el sector metalmecanico con actividades operativas. Desarrolle competencias transversales como trabajo en equipo, gestion del tiempo y atencion a la calidad.",
-          bullets: ["Trabajo en equipo", "Resolucion de problemas", "Adaptabilidad"],
+            "Experiencia en el sector metalmecanico con actividades operativas.",
+          bullets: ["Trabajo en equipo", "Gestion del tiempo", "Atencion a la calidad"],
         },
         booleanCourse: {
           period: "May 2025 • Ene 2026",
           meta: "Remoto · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Programa full-time de formacion como desarrollador, con proyectos individuales y en equipo desarrollados siguiendo un flujo de trabajo profesional.",
+            "Programa full-time intensivo con desarrollo de proyectos web individuales y en equipo.",
           bullets: [
-            "Desarrollo frontend con HTML, CSS, JavaScript y React",
+            "Desarrollo de proyectos con HTML, CSS, JavaScript y React",
             "Control de versiones con Git y GitHub",
-            "Colaboracion en equipo en proyectos reales",
           ],
         },
         beaverLab: {
@@ -386,12 +383,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Desarrollo de sitios web profesionales con WordPress, creando layouts dinamicos mediante ACF y gestionando contenidos con PHP. Colaboro en equipo en proyectos reales, cuidando interfaces responsive y plantillas de email con MJML.",
+            "Desarrollo y personalizacion de sitios web en WordPress a partir de disenos proporcionados, creando interfaces responsive y funcionales.",
           bullets: [
-            "WordPress y ACF para layouts dinamicos",
-            "PHP para gestion y personalizacion de contenidos",
-            "Layouts responsive optimizados para cada dispositivo",
-            "MJML para plantillas de email profesionales",
+            "Layouts y contenidos dinamicos mediante ACF",
+            "PHP para funcionalidades personalizadas",
+            "Colaboracion con el equipo de desarrollo en proyectos reales",
+            "Plantillas de email profesionales con MJML",
           ],
         },
       },
@@ -470,7 +467,7 @@ export const SITE_TEXT = {
   },
   ro: {
     header: {
-      brandRole: "Dezvoltator Web Junior",
+      brandRole: "Dezvoltator Full Stack Junior",
       toggleNavigationLabel: "Deschide sau inchide meniul",
       nav: {
         home: "Acasa",
@@ -516,23 +513,22 @@ export const SITE_TEXT = {
             "Diploma tehnica si profesionala, cu o pregatire orientata spre practica si rezolvarea problemelor reale.",
         },
         work: {
-          period: "2021 • 2025",
+          period: "Oct 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tehnician de productie",
           description:
-            "Experienta in sectorul metalmecanic cu activitati operationale. Am dezvoltat competente transversale precum lucrul in echipa, gestionarea timpului si atentia la calitate.",
-          bullets: ["Teamwork", "Rezolvare de probleme", "Adaptabilitate"],
+            "Experienta in sectorul metalmecanic cu activitati operationale.",
+          bullets: ["Lucru in echipa", "Gestionarea timpului", "Atentie la calitate"],
         },
         booleanCourse: {
           period: "Mai 2025 • Ian 2026",
           meta: "Remote · Boolean",
           title: "Junior Web Developer Trainee",
           description:
-            "Program full-time de formare ca dezvoltator, cu proiecte individuale si in echipa realizate urmand un flux de lucru profesional.",
+            "Program full-time intensiv cu dezvoltare de proiecte web individuale si in echipa.",
           bullets: [
-            "Dezvoltare frontend cu HTML, CSS, JavaScript si React",
+            "Dezvoltare de proiecte cu HTML, CSS, JavaScript si React",
             "Versionare a codului cu Git si GitHub",
-            "Colaborare in echipa pe proiecte reale",
           ],
         },
         beaverLab: {
@@ -540,12 +536,12 @@ export const SITE_TEXT = {
           meta: "Seregno, Lombardia · Beaver Lab",
           title: "Junior Web Developer",
           description:
-            "Dezvoltare de site-uri web profesionale cu WordPress, crearea de layouturi dinamice prin ACF si gestionarea continutului cu PHP. Colaborez in echipa pe proiecte reale, ingrijind interfete responsive si template-uri de email cu MJML.",
+            "Dezvoltare si personalizare de site-uri web in WordPress pornind de la design-uri furnizate, realizand interfete responsive si functionale.",
           bullets: [
-            "WordPress si ACF pentru layouturi dinamice",
-            "PHP pentru gestionarea si personalizarea continutului",
-            "Layouturi responsive optimizate pentru fiecare dispozitiv",
-            "MJML pentru template-uri de email profesionale",
+            "Layouturi si continut dinamic prin ACF",
+            "PHP pentru functionalitati personalizate",
+            "Colaborare cu echipa de dezvoltare pe proiecte reale",
+            "Template-uri de email profesionale cu MJML",
           ],
         },
       },
