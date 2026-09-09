@@ -29,7 +29,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Ciao, sono Moraru Stefan",
       greetingPrefix: "Ciao, sono ",
-      role: "Junior Web Developer",
+      role: "Junior Full Stack Developer",
       heroLead:
         "Creo interfacce web moderne, responsive e intuitive, con grande attenzione all'esperienza utente.",
       ctaProjects: "Guarda i progetti",
@@ -39,7 +39,7 @@ export const SITE_TEXT = {
         kicker: "Profilo",
         title: "Chi sono",
         description:
-          "Sono uno sviluppatore web junior con competenze full-stack e un forte orientamento al front-end. Ho completato un corso intensivo di oltre 600 ore come Full-Stack Web Developer con Boolean, durante il quale ho realizzato diversi progetti concreti. Ho maturato esperienza concreta con WordPress e PHP, e sono alla ricerca di opportunità professionali come sviluppatore front-end, con la voglia di continuare a crescere su framework moderni come React, Vue e Angular.",
+          "Sviluppatore full-stack junior con un forte orientamento al front-end. Ho completato un corso intensivo come Full-Stack Web Developer, dove ho approfondito JavaScript e React, con basi di Node.js, Express e MySQL. Oggi lavoro in agenzia, dove mi occupo dello sviluppo di siti e interfacce web responsive, seguendo progetti reali dal design fino alla messa online e collaborando in team con Git.",
         tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
@@ -183,7 +183,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hi, I'm Moraru Stefan",
       greetingPrefix: "Hi, I'm ",
-      role: "Junior Web Developer",
+      role: "Junior Full Stack Developer",
       heroLead:
         "I build modern, responsive, and intuitive web interfaces, with strong attention to user experience.",
       ctaProjects: "View projects",
@@ -193,7 +193,7 @@ export const SITE_TEXT = {
         kicker: "Profile",
         title: "About me",
         description:
-          "I am a junior web developer with full-stack skills and a strong front-end focus. I completed an intensive 600+ hour Full-Stack Web Developer program at Boolean, where I built multiple real-world projects. I've gained hands-on experience with WordPress and PHP, and I'm now looking for professional opportunities as a front-end developer, eager to keep growing with modern frameworks like React, Vue, and Angular.",
+          "Junior full-stack developer with a strong front-end focus. I completed an intensive Full-Stack Web Developer program, where I deepened my skills in JavaScript and React, with a foundation in Node.js, Express, and MySQL. I now work at an agency, building responsive websites and web interfaces, following real projects from design through to launch and collaborating in a team with Git.",
         tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
@@ -337,7 +337,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hola, soy Moraru Stefan",
       greetingPrefix: "Hola, soy ",
-      role: "Desarrollador Web Junior",
+      role: "Desarrollador Full Stack Junior",
       heroLead:
         "Creo interfaces web modernas, responsive e intuitivas, con gran atencion a la experiencia de usuario.",
       ctaProjects: "Ver proyectos",
@@ -347,7 +347,7 @@ export const SITE_TEXT = {
         kicker: "Perfil",
         title: "Sobre mi",
         description:
-          "Soy un desarrollador web junior con competencias full-stack y una fuerte orientacion al front-end. Complete un curso intensivo de mas de 600 horas como Full-Stack Web Developer en Boolean, donde realice varios proyectos reales. He adquirido experiencia concreta con WordPress y PHP, y actualmente busco oportunidades profesionales como desarrollador front-end, con ganas de seguir creciendo en frameworks modernos como React, Vue y Angular.",
+          "Desarrollador full-stack junior con una fuerte orientacion al front-end. Complete un curso intensivo como Full-Stack Web Developer, donde profundice en JavaScript y React, con bases de Node.js, Express y MySQL. Actualmente trabajo en una agencia, donde me encargo del desarrollo de sitios e interfaces web responsive, siguiendo proyectos reales desde el diseno hasta la publicacion y colaborando en equipo con Git.",
         tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
@@ -491,7 +491,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Salut, sunt Moraru Stefan",
       greetingPrefix: "Salut, sunt ",
-      role: "Dezvoltator Web Junior",
+      role: "Dezvoltator Full Stack Junior",
       heroLead:
         "Construiesc interfete web moderne, responsive si intuitive, cu atentie puternica la experienta utilizatorului.",
       ctaProjects: "Vezi proiectele",
@@ -501,7 +501,7 @@ export const SITE_TEXT = {
         kicker: "Profil",
         title: "Despre mine",
         description:
-          "Sunt dezvoltator web junior cu competente full-stack si focus puternic pe front-end. Am finalizat un curs intensiv de peste 600 de ore ca Full-Stack Web Developer la Boolean, unde am realizat mai multe proiecte reale. Am acumulat experienta concreta cu WordPress si PHP, iar acum caut oportunitati profesionale ca dezvoltator front-end, cu dorinta de a continua sa cresc pe framework-uri moderne precum React, Vue si Angular.",
+          "Dezvoltator full-stack junior cu un focus puternic pe front-end. Am finalizat un curs intensiv ca Full-Stack Web Developer, unde am aprofundat JavaScript si React, cu baze de Node.js, Express si MySQL. In prezent lucrez intr-o agentie, unde ma ocup de dezvoltarea de site-uri si interfete web responsive, urmarind proiecte reale de la design pana la lansare si colaborand in echipa cu Git.",
         tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
