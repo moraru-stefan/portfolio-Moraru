@@ -40,7 +40,7 @@ export const SITE_TEXT = {
         title: "Chi sono",
         description:
           "Sviluppatore full-stack junior con un forte orientamento al front-end. Ho completato un corso intensivo come Full-Stack Web Developer, dove ho approfondito JavaScript e React, con basi di Node.js, Express e MySQL. Oggi lavoro in agenzia, dove mi occupo dello sviluppo di siti e interfacce web responsive, seguendo progetti reali dal design fino alla messa online e collaborando in team con Git.",
-        tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
         title: "Il mio percorso",
@@ -193,7 +193,7 @@ export const SITE_TEXT = {
         title: "About me",
         description:
           "Junior full-stack developer with a strong front-end focus. I completed an intensive Full-Stack Web Developer program, where I deepened my skills in JavaScript and React, with a foundation in Node.js, Express, and MySQL. I now work at an agency, building responsive websites and web interfaces, following real projects from design through to launch and collaborating in a team with Git.",
-        tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
         title: "My Journey",
@@ -346,7 +346,7 @@ export const SITE_TEXT = {
         title: "Sobre mi",
         description:
           "Desarrollador full-stack junior con una fuerte orientacion al front-end. Complete un curso intensivo como Full-Stack Web Developer, donde profundice en JavaScript y React, con bases de Node.js, Express y MySQL. Actualmente trabajo en una agencia, donde me encargo del desarrollo de sitios e interfaces web responsive, siguiendo proyectos reales desde el diseno hasta la publicacion y colaborando en equipo con Git.",
-        tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
         title: "Mi recorrido",
@@ -499,7 +499,7 @@ export const SITE_TEXT = {
         title: "Despre mine",
         description:
           "Dezvoltator full-stack junior cu un focus puternic pe front-end. Am finalizat un curs intensiv ca Full-Stack Web Developer, unde am aprofundat JavaScript si React, cu baze de Node.js, Express si MySQL. In prezent lucrez intr-o agentie, unde ma ocup de dezvoltarea de site-uri si interfete web responsive, urmarind proiecte reale de la design pana la lansare si colaborand in echipa cu Git.",
-        tech: ["HTML", "CSS", "Javascript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
       },
       path: {
         title: "Parcursul meu",
