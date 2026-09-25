@@ -8,7 +8,7 @@ export const LANGUAGE_OPTIONS = [
 export const SITE_TEXT = {
   it: {
     header: {
-      brandRole: "Junior Full Stack Developer",
+      brandRole: "Full Stack Web Developer",
       toggleNavigationLabel: "Apri o chiudi menu",
       nav: {
         home: "Home",
@@ -29,7 +29,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Ciao, sono Moraru Stefan",
       greetingPrefix: "Ciao, sono ",
-      role: "Junior Full Stack Developer",
+      role: "Full Stack Web Developer",
       heroLead:
         "Creo interfacce web moderne, responsive e intuitive, con grande attenzione all'esperienza utente.",
       ctaProjects: "Guarda i progetti",
@@ -39,8 +39,8 @@ export const SITE_TEXT = {
         kicker: "Profilo",
         title: "Chi sono",
         description:
-          "Sviluppatore full-stack junior con un forte orientamento al front-end. Ho completato un corso intensivo come Full-Stack Web Developer, dove ho approfondito JavaScript e React, con basi di Node.js, Express e MySQL. Oggi lavoro in agenzia, dove mi occupo dello sviluppo di siti e interfacce web responsive, seguendo progetti reali dal design fino alla messa online e collaborando in team con Git.",
-        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+          "Full Stack Web Developer con un solido orientamento al front-end. Progetto e sviluppo interfacce web moderne e responsive con JavaScript, TypeScript e React, seguendo ogni progetto dal design fino alla messa online. Ho maturato esperienza in agenzia e come freelance su progetti per clienti reali, lavorando in team con Git. Attento alla qualità del codice e all'esperienza utente, sono costantemente aggiornato sulle nuove tecnologie.",
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "MySQL", "Supabase", "WordPress", "PHP"],
       },
       path: {
         title: "Il mio percorso",
@@ -54,17 +54,28 @@ export const SITE_TEXT = {
             "Diploma di Istituto Tecnico e Professionale, con una formazione orientata alla pratica e alla risoluzione di problemi reali.",
         },
         work: {
-          period: "Ott 2021 • Apr 2025",
+          period: "Ott 2021 • Nov 2023",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico di produzione",
           description:
             "Esperienza nel settore metalmeccanico con attività operative.",
           bullets: ["Lavoro in team", "Gestione del tempo", "Attenzione alla qualità"],
         },
+        snappie: {
+          period: "Dic 2023 • Gen 2026",
+          meta: "Da remoto · Snappie",
+          title: "Full Stack Web Developer",
+          description:
+            "Collaborazione freelance da remoto: sviluppo di interfacce responsive e manutenzione di codice back-end esistente.",
+          bullets: [
+            "Interfacce responsive con JavaScript, React, HTML, CSS e Tailwind CSS",
+            "Manutenzione di codice back-end in Node.js ed Express",
+          ],
+        },
         booleanCourse: {
           period: "Mag 2025 • Gen 2026",
           meta: "Da remoto · Boolean",
-          title: "Junior Web Developer Trainee",
+          title: "Web Developer Trainee",
           description:
             "Percorso intensivo full-time con sviluppo di progetti web individuali e di gruppo.",
           bullets: [
@@ -75,14 +86,15 @@ export const SITE_TEXT = {
         beaverLab: {
           period: "Mar 2026 • Presente",
           meta: "Seregno, Lombardia · Beaver Lab",
-          title: "Junior Web Developer",
+          title: "Web Developer",
           description:
-            "Sviluppo e personalizzazione di siti web in WordPress a partire dai design forniti, realizzando interfacce responsive e funzionali.",
+            "Sviluppo e personalizzazione di siti WordPress a partire dai design forniti, con contenuti dinamici gestiti tramite ACF e funzionalità custom in PHP.",
           bullets: [
             "Creazione di layout e contenuti dinamici tramite ACF",
             "Utilizzo di PHP per personalizzazioni e funzionalità custom",
+            "Template email professionali con MJML",
+            "Uso di agenti AI (Claude Code, Codex) per sviluppo, debugging e refactoring, con revisione del codice prodotto",
             "Collaborazione con il team di sviluppo su progetti per clienti reali",
-            "Sviluppo di template email professionali con MJML",
           ],
         },
       },
@@ -161,7 +173,7 @@ export const SITE_TEXT = {
   },
   en: {
     header: {
-      brandRole: "Junior Full Stack Developer",
+      brandRole: "Full Stack Web Developer",
       toggleNavigationLabel: "Open or close navigation",
       nav: {
         home: "Home",
@@ -182,7 +194,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hi, I'm Moraru Stefan",
       greetingPrefix: "Hi, I'm ",
-      role: "Junior Full Stack Developer",
+      role: "Full Stack Web Developer",
       heroLead:
         "I build modern, responsive, and intuitive web interfaces, with strong attention to user experience.",
       ctaProjects: "View projects",
@@ -192,8 +204,8 @@ export const SITE_TEXT = {
         kicker: "Profile",
         title: "About me",
         description:
-          "Junior full-stack developer with a strong front-end focus. I completed an intensive Full-Stack Web Developer program, where I deepened my skills in JavaScript and React, with a foundation in Node.js, Express, and MySQL. I now work at an agency, building responsive websites and web interfaces, following real projects from design through to launch and collaborating in a team with Git.",
-        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+          "Full Stack Web Developer with a solid front-end focus. I design and build modern, responsive web interfaces with JavaScript, TypeScript, and React, following each project from design through to launch. I've gained experience both in-agency and freelance on real client projects, working in a team with Git. Attentive to code quality and user experience, I stay constantly up to date with new technologies.",
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "MySQL", "Supabase", "WordPress", "PHP"],
       },
       path: {
         title: "My Journey",
@@ -207,17 +219,28 @@ export const SITE_TEXT = {
             "Technical and Vocational High School Diploma, with hands-on training focused on solving real-world problems.",
         },
         work: {
-          period: "Oct 2021 • Apr 2025",
+          period: "Oct 2021 • Nov 2023",
           meta: "Minuterie 3M · Lecco",
           title: "Production Technician",
           description:
             "Experience in the metalworking industry with hands-on operations.",
           bullets: ["Teamwork", "Time management", "Attention to quality"],
         },
+        snappie: {
+          period: "Dec 2023 • Jan 2026",
+          meta: "Remote · Snappie",
+          title: "Full Stack Web Developer",
+          description:
+            "Remote freelance collaboration: building responsive interfaces and maintaining existing back-end code.",
+          bullets: [
+            "Responsive interfaces with JavaScript, React, HTML, CSS, and Tailwind CSS",
+            "Maintaining back-end code in Node.js and Express",
+          ],
+        },
         booleanCourse: {
           period: "May 2025 • Jan 2026",
           meta: "Remote · Boolean",
-          title: "Junior Web Developer Trainee",
+          title: "Web Developer Trainee",
           description:
             "Full-time intensive program building individual and team web projects.",
           bullets: [
@@ -228,14 +251,15 @@ export const SITE_TEXT = {
         beaverLab: {
           period: "Mar 2026 • Present",
           meta: "Seregno, Lombardy · Beaver Lab",
-          title: "Junior Web Developer",
+          title: "Web Developer",
           description:
-            "Building and customizing WordPress websites from provided designs, creating responsive and functional interfaces.",
+            "Building and customizing WordPress websites from provided designs, with dynamic content managed through ACF and custom PHP functionality.",
           bullets: [
             "Dynamic layouts and content via ACF",
             "PHP for custom functionality",
-            "Collaborating with the dev team on real client projects",
             "Professional email templates with MJML",
+            "Using AI agents (Claude Code, Codex) for development, debugging, and refactoring, with review of the generated code",
+            "Collaborating with the dev team on real client projects",
           ],
         },
       },
@@ -314,7 +338,7 @@ export const SITE_TEXT = {
   },
   es: {
     header: {
-      brandRole: "Desarrollador Full Stack Junior",
+      brandRole: "Full Stack Web Developer",
       toggleNavigationLabel: "Abrir o cerrar navegacion",
       nav: {
         home: "Inicio",
@@ -335,7 +359,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Hola, soy Moraru Stefan",
       greetingPrefix: "Hola, soy ",
-      role: "Desarrollador Full Stack Junior",
+      role: "Full Stack Web Developer",
       heroLead:
         "Creo interfaces web modernas, responsive e intuitivas, con gran atencion a la experiencia de usuario.",
       ctaProjects: "Ver proyectos",
@@ -345,8 +369,8 @@ export const SITE_TEXT = {
         kicker: "Perfil",
         title: "Sobre mi",
         description:
-          "Desarrollador full-stack junior con una fuerte orientacion al front-end. Complete un curso intensivo como Full-Stack Web Developer, donde profundice en JavaScript y React, con bases de Node.js, Express y MySQL. Actualmente trabajo en una agencia, donde me encargo del desarrollo de sitios e interfaces web responsive, siguiendo proyectos reales desde el diseno hasta la publicacion y colaborando en equipo con Git.",
-        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+          "Full Stack Web Developer con una solida orientacion al front-end. Diseno y desarrollo interfaces web modernas y responsive con JavaScript, TypeScript y React, siguiendo cada proyecto desde el diseno hasta la publicacion. He adquirido experiencia tanto en agencia como en freelance en proyectos para clientes reales, trabajando en equipo con Git. Atento a la calidad del codigo y a la experiencia de usuario, me mantengo constantemente actualizado sobre las nuevas tecnologias.",
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "MySQL", "Supabase", "WordPress", "PHP"],
       },
       path: {
         title: "Mi recorrido",
@@ -360,17 +384,28 @@ export const SITE_TEXT = {
             "Diploma tecnico y profesional, con una formacion orientada a la practica y a la resolucion de problemas reales.",
         },
         work: {
-          period: "Oct 2021 • Abr 2025",
+          period: "Oct 2021 • Nov 2023",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico de produccion",
           description:
             "Experiencia en el sector metalmecanico con actividades operativas.",
           bullets: ["Trabajo en equipo", "Gestion del tiempo", "Atencion a la calidad"],
         },
+        snappie: {
+          period: "Dic 2023 • Ene 2026",
+          meta: "Remoto · Snappie",
+          title: "Full Stack Web Developer",
+          description:
+            "Colaboracion freelance remota: desarrollo de interfaces responsive y mantenimiento de codigo back-end existente.",
+          bullets: [
+            "Interfaces responsive con JavaScript, React, HTML, CSS y Tailwind CSS",
+            "Mantenimiento de codigo back-end en Node.js y Express",
+          ],
+        },
         booleanCourse: {
           period: "May 2025 • Ene 2026",
           meta: "Remoto · Boolean",
-          title: "Junior Web Developer Trainee",
+          title: "Web Developer Trainee",
           description:
             "Programa full-time intensivo con desarrollo de proyectos web individuales y en equipo.",
           bullets: [
@@ -381,14 +416,15 @@ export const SITE_TEXT = {
         beaverLab: {
           period: "Mar 2026 • Presente",
           meta: "Seregno, Lombardia · Beaver Lab",
-          title: "Junior Web Developer",
+          title: "Web Developer",
           description:
-            "Desarrollo y personalizacion de sitios web en WordPress a partir de disenos proporcionados, creando interfaces responsive y funcionales.",
+            "Desarrollo y personalizacion de sitios WordPress a partir de disenos proporcionados, con contenido dinamico gestionado mediante ACF y funcionalidades personalizadas en PHP.",
           bullets: [
             "Layouts y contenidos dinamicos mediante ACF",
             "PHP para funcionalidades personalizadas",
-            "Colaboracion con el equipo de desarrollo en proyectos reales",
             "Plantillas de email profesionales con MJML",
+            "Uso de agentes de IA (Claude Code, Codex) para desarrollo, depuracion y refactorizacion, con revision del codigo generado",
+            "Colaboracion con el equipo de desarrollo en proyectos reales",
           ],
         },
       },
@@ -467,7 +503,7 @@ export const SITE_TEXT = {
   },
   ro: {
     header: {
-      brandRole: "Dezvoltator Full Stack Junior",
+      brandRole: "Full Stack Web Developer",
       toggleNavigationLabel: "Deschide sau inchide meniul",
       nav: {
         home: "Acasa",
@@ -488,7 +524,7 @@ export const SITE_TEXT = {
     homepage: {
       heroGreeting: "Salut, sunt Moraru Stefan",
       greetingPrefix: "Salut, sunt ",
-      role: "Dezvoltator Full Stack Junior",
+      role: "Full Stack Web Developer",
       heroLead:
         "Construiesc interfete web moderne, responsive si intuitive, cu atentie puternica la experienta utilizatorului.",
       ctaProjects: "Vezi proiectele",
@@ -498,8 +534,8 @@ export const SITE_TEXT = {
         kicker: "Profil",
         title: "Despre mine",
         description:
-          "Dezvoltator full-stack junior cu un focus puternic pe front-end. Am finalizat un curs intensiv ca Full-Stack Web Developer, unde am aprofundat JavaScript si React, cu baze de Node.js, Express si MySQL. In prezent lucrez intr-o agentie, unde ma ocup de dezvoltarea de site-uri si interfete web responsive, urmarind proiecte reale de la design pana la lansare si colaborand in echipa cu Git.",
-        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Node.js", "Express", "MySQL", "WordPress", "PHP"],
+          "Full Stack Web Developer cu o orientare solida spre front-end. Proiectez si dezvolt interfete web moderne si responsive cu JavaScript, TypeScript si React, urmarind fiecare proiect de la design pana la lansare. Am acumulat experienta atat in agentie cat si ca freelancer pe proiecte pentru clienti reali, lucrand in echipa cu Git. Atent la calitatea codului si la experienta utilizatorului, ma tin constant la curent cu noile tehnologii.",
+        tech: ["HTML", "CSS", "Javascript", "TypeScript", "React", "Tailwind CSS", "Node.js", "Express", "MySQL", "Supabase", "WordPress", "PHP"],
       },
       path: {
         title: "Parcursul meu",
@@ -513,17 +549,28 @@ export const SITE_TEXT = {
             "Diploma tehnica si profesionala, cu o pregatire orientata spre practica si rezolvarea problemelor reale.",
         },
         work: {
-          period: "Oct 2021 • Apr 2025",
+          period: "Oct 2021 • Nov 2023",
           meta: "Minuterie 3M · Lecco",
           title: "Tehnician de productie",
           description:
             "Experienta in sectorul metalmecanic cu activitati operationale.",
           bullets: ["Lucru in echipa", "Gestionarea timpului", "Atentie la calitate"],
         },
+        snappie: {
+          period: "Dec 2023 • Ian 2026",
+          meta: "Remote · Snappie",
+          title: "Full Stack Web Developer",
+          description:
+            "Colaborare freelance de la distanta: dezvoltare de interfete responsive si mentenanta codului back-end existent.",
+          bullets: [
+            "Interfete responsive cu JavaScript, React, HTML, CSS si Tailwind CSS",
+            "Mentenanta codului back-end in Node.js si Express",
+          ],
+        },
         booleanCourse: {
           period: "Mai 2025 • Ian 2026",
           meta: "Remote · Boolean",
-          title: "Junior Web Developer Trainee",
+          title: "Web Developer Trainee",
           description:
             "Program full-time intensiv cu dezvoltare de proiecte web individuale si in echipa.",
           bullets: [
@@ -534,14 +581,15 @@ export const SITE_TEXT = {
         beaverLab: {
           period: "Mar 2026 • Prezent",
           meta: "Seregno, Lombardia · Beaver Lab",
-          title: "Junior Web Developer",
+          title: "Web Developer",
           description:
-            "Dezvoltare si personalizare de site-uri web in WordPress pornind de la design-uri furnizate, realizand interfete responsive si functionale.",
+            "Dezvoltare si personalizare de site-uri WordPress pornind de la design-uri furnizate, cu continut dinamic gestionat prin ACF si functionalitati personalizate in PHP.",
           bullets: [
             "Layouturi si continut dinamic prin ACF",
             "PHP pentru functionalitati personalizate",
-            "Colaborare cu echipa de dezvoltare pe proiecte reale",
             "Template-uri de email profesionale cu MJML",
+            "Utilizarea agentilor AI (Claude Code, Codex) pentru dezvoltare, debugging si refactorizare, cu verificarea codului generat",
+            "Colaborare cu echipa de dezvoltare pe proiecte reale",
           ],
         },
       },
