@@ -103,7 +103,7 @@ export default function HeroSection({ text }) {
                 {text.ctaProjects}
               </a>
               <a
-                href={`${BASE}CV-Stefan-Moraru-agg222.pdf`}
+                href={`${BASE}CV-Stefan-Moraru-aggiornato.pdf`}
                 className="btn btn-outline-primary"
                 download
               >
