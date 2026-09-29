@@ -54,7 +54,7 @@ export const SITE_TEXT = {
             "Diploma di Istituto Tecnico e Professionale, con una formazione orientata alla pratica e alla risoluzione di problemi reali.",
         },
         work: {
-          period: "Ott 2021 • Nov 2023",
+          period: "Ott 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico di produzione",
           description:
@@ -62,7 +62,7 @@ export const SITE_TEXT = {
           bullets: ["Lavoro in team", "Gestione del tempo", "Attenzione alla qualità"],
         },
         snappie: {
-          period: "Dic 2023 • Gen 2026",
+          period: "Apr 2025 • Mar 2026",
           meta: "Da remoto · Snappie",
           title: "Full Stack Web Developer",
           description:
@@ -219,7 +219,7 @@ export const SITE_TEXT = {
             "Technical and Vocational High School Diploma, with hands-on training focused on solving real-world problems.",
         },
         work: {
-          period: "Oct 2021 • Nov 2023",
+          period: "Oct 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Production Technician",
           description:
@@ -227,7 +227,7 @@ export const SITE_TEXT = {
           bullets: ["Teamwork", "Time management", "Attention to quality"],
         },
         snappie: {
-          period: "Dec 2023 • Jan 2026",
+          period: "Apr 2025 • Mar 2026",
           meta: "Remote · Snappie",
           title: "Full Stack Web Developer",
           description:
@@ -384,7 +384,7 @@ export const SITE_TEXT = {
             "Diploma tecnico y profesional, con una formacion orientada a la practica y a la resolucion de problemas reales.",
         },
         work: {
-          period: "Oct 2021 • Nov 2023",
+          period: "Oct 2021 • Abr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tecnico de produccion",
           description:
@@ -392,7 +392,7 @@ export const SITE_TEXT = {
           bullets: ["Trabajo en equipo", "Gestion del tiempo", "Atencion a la calidad"],
         },
         snappie: {
-          period: "Dic 2023 • Ene 2026",
+          period: "Abr 2025 • Mar 2026",
           meta: "Remoto · Snappie",
           title: "Full Stack Web Developer",
           description:
@@ -549,7 +549,7 @@ export const SITE_TEXT = {
             "Diploma tehnica si profesionala, cu o pregatire orientata spre practica si rezolvarea problemelor reale.",
         },
         work: {
-          period: "Oct 2021 • Nov 2023",
+          period: "Oct 2021 • Apr 2025",
           meta: "Minuterie 3M · Lecco",
           title: "Tehnician de productie",
           description:
@@ -557,7 +557,7 @@ export const SITE_TEXT = {
           bullets: ["Lucru in echipa", "Gestionarea timpului", "Atentie la calitate"],
         },
         snappie: {
-          period: "Dec 2023 • Ian 2026",
+          period: "Apr 2025 • Mar 2026",
           meta: "Remote · Snappie",
           title: "Full Stack Web Developer",
           description:

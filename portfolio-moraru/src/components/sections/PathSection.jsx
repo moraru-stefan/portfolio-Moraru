@@ -55,31 +55,10 @@ export default function PathSection({ path }) {
             </div>
           </article>
 
-          {/* Snappie */}
+          {/* Boolean */}
           <article
             ref={pathItemRef(2)}
             className={`path-item ${pathItemsVisible.has(2) ? "in-view" : ""}`}
-          >
-            <div className="path-dot" aria-hidden="true"></div>
-            <div className="path-card">
-              <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
-                <span className="badge text-bg-light border">{path.snappie.period}</span>
-                <span className="text-muted small">{path.snappie.meta}</span>
-              </div>
-              <h3 className="h5 mb-1">{path.snappie.title}</h3>
-              <p className="text-muted mb-2">{path.snappie.description}</p>
-              <ul className="path-list">
-                {path.snappie.bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-
-          {/* Boolean */}
-          <article
-            ref={pathItemRef(3)}
-            className={`path-item ${pathItemsVisible.has(3) ? "in-view" : ""}`}
           >
             <div className="path-dot" aria-hidden="true"></div>
             <div className="path-card">
@@ -91,6 +70,27 @@ export default function PathSection({ path }) {
               <p className="text-muted mb-2">{path.booleanCourse.description}</p>
               <ul className="path-list">
                 {path.booleanCourse.bullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+
+          {/* Snappie */}
+          <article
+            ref={pathItemRef(3)}
+            className={`path-item ${pathItemsVisible.has(3) ? "in-view" : ""}`}
+          >
+            <div className="path-dot" aria-hidden="true"></div>
+            <div className="path-card">
+              <div className="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                <span className="badge text-bg-light border">{path.snappie.period}</span>
+                <span className="text-muted small">{path.snappie.meta}</span>
+              </div>
+              <h3 className="h5 mb-1">{path.snappie.title}</h3>
+              <p className="text-muted mb-2">{path.snappie.description}</p>
+              <ul className="path-list">
+                {path.snappie.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
